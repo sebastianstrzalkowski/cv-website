@@ -1,13 +1,10 @@
 import React from 'react';
 import { ArrowRight, Code } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '../../context/LanguageContext';
 import developerData from '../../data/developerData';
 
 const Hero = ({ scrollToSection }) => {
   const { t } = useTranslation();
-  const { currentLanguage } = useLanguage();
-
   return (
       <section id="home" className="min-h-screen relative flex items-center justify-center bg-gray-900 text-white overflow-hidden">
         {/* Green gradient lights */}
