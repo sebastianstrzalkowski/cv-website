@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "experience": "Doświadczenie",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Cześć, jestem",
+    "subtitle": "Java & Blockchain Developer",
+    "experienceButton": "Zobacz doświadczenie",
+    "projectsButton": "Projekty Poboczne",
+    "scrollDown": "Przewiń w dół"
+  },
+  "about": {
+    "title": "O mnie",
+    "subtitle": "Umiejętności & doświadczenie",
+    "skills": "Umiejętności",
+    "additionalTech": "Dodatkowe technologie",
+    "specializations": "Specjalizacje",
+    "specialization": {
+      "java": "Java Development",
+      "javaDesc": "Spring Boot, Microservices",
+      "blockchain": "Blockchain",
+      "blockchainDesc": "Solidity, Ethereum, Web3",
+      "cloud": "Cloud Infrastructure",
+      "cloudDesc": "AWS, Terraform, Docker",
+      "databases": "Bazy danych",
+      "databasesDesc": "PostgreSQL, Redis"
+    },
+    "education": "Edukacja"
+  },
+  "experience": {
+    "title": "Kariera",
+    "subtitle": "Doświadczenie zawodowe"
+  },
+  "projects": {
+    "title": "Projekty",
+    "subtitle": "Projekty Poboczne & Współprace",
+    "viewProject": "Zobacz projekt"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Skontaktuj się ze mną",
+    "description": "Jeśli masz ciekawy projekt lub chciałbyś porozmawiać o możliwościach współpracy, napisz do mnie lub zadzwoń.",
+    "contactDetails": "Dane kontaktowe",
+    "contactLabels": {
+      "email": "Email",
+      "phone": "Telefon",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "telegram": "Telegram",
+      "discord": "Discord"
+    },
+    "form": {
+      "title": "Napisz wiadomość",
+      "name": "Imię i nazwisko",
+      "namePlaceholder": "Twoje imię",
+      "email": "Email",
+      "emailPlaceholder": "Twój email",
+      "message": "Wiadomość",
+      "messagePlaceholder": "Twoja wiadomość",
+      "send": "Wyślij wiadomość"
+    }
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "developerData": {
+    "about": "Java Developer z 7-letnim doświadczeniem w budowaniu skalowalnych aplikacji korporacyjnych. Aktywnie rozwijam swoje umiejętności w obszarze blockchain (Ethereum) i praktyk DevOps. Poza pracą eksperymentuję z nowymi technologiami i uczestniczę w lokalnych spotkaniach technologicznych. Poszukuję projektów, które pozwolą mi połączyć moje doświadczenie w Javie z nowymi wyzwaniami w obszarach blockchain, skalowalnych aplikacji i infrastruktury chmurowej."
+  },
+  "jobTitle": {
+    "softwareDeveloper": "Software Developer"
+  }
+}
