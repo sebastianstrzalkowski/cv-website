@@ -1,6 +1,5 @@
 import i18next from 'i18next';
 
-// Funkcja do pobierania przetłumaczonych okresów czasowych
 const getLocalizedDates = () => {
   const lang = i18next.language;
 
@@ -26,12 +25,10 @@ const getLocalizedDates = () => {
   return translations[lang] || translations.pl;
 };
 
-// Funkcja formatująca daty
 const formatPeriod = (startDate, endDate) => {
   const lang = i18next.language;
   const { currentPeriod, months } = getLocalizedDates();
 
-  // Przykład formatu: 01.2024, 07.2024
   const formatDate = (dateStr) => {
     if (!dateStr) return "";
     const [month, year] = dateStr.split('.');
@@ -155,7 +152,7 @@ const developerData = {
     }
   ],
   contact: {
-    email: "kontakt@i-can-do.it",
+    email: "sebastian.strzalkowski@i-can-do.it",
     phone: "+48 661 312 648",
     linkedin: "linkedin.com/in/sebastianstrzalkowski",
     github: "github.com/sebastianstrzalkowski",

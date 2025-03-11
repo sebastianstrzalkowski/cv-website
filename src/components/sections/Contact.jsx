@@ -17,19 +17,18 @@ const Contact = () => {
     setSuccess(false);
     setError(false);
 
-    // Przygotowanie danych formularza z niestandardowym odbiorcą
     const templateParams = {
       from_name: e.target.from_name.value,
       reply_to: e.target.reply_to.value,
       message: e.target.message.value,
-      to_email: "kontakt@i-can-do.it" // Przekierowanie na preferowany adres email
+      to_email: "sebastian.strzalkowski@i-can-do.it"
     };
 
     emailjs.send(
-        'service_2yrvjqd', // Service ID z EmailJS
-        'template_bg2ua91', // Template ID z EmailJS
+        'service_2yrvjqd',
+        'template_bg2ua91',
         templateParams,
-        'mYDSK-Ps24LOITgNi' // Public Key z EmailJS
+        'mYDSK-Ps24LOITgNi'
     )
     .then((result) => {
       console.log('Email sent successfully:', result.text);
@@ -141,8 +140,7 @@ const Contact = () => {
               <div className="p-8">
                 <h3 className="text-2xl font-semibold mb-6 text-green-400">{t('contact.form.title')}</h3>
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-                  {/* Ukryte pole z adresem docelowym */}
-                  <input type="hidden" name="to_email" value="kontakt@i-can-do.it" />
+                  <input type="hidden" name="to_email" value="sebastian.strzalkowski@i-can-do.it" />
 
                   <div>
                     <label className="block text-sm text-gray-400 mb-1">{t('contact.form.name')}</label>

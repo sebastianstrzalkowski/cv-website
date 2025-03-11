@@ -61,7 +61,10 @@
       "emailPlaceholder": "Twój email",
       "message": "Wiadomość",
       "messagePlaceholder": "Twoja wiadomość",
-      "send": "Wyślij wiadomość"
+      "send": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Wiadomość wysłana pomyślnie!",
+      "error": "Błąd podczas wysyłania wiadomości. Spróbuj ponownie."
     }
   },
   "footer": {
