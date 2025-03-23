@@ -2,15 +2,17 @@
 import React from 'react';
 import useScrollSection from './hooks/useScrollSection';
 import { LanguageProvider } from './context/LanguageContext';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Experience from './components/sections/Experience';
-import Projects from './components/sections/Projects';
-// Import Media komponentu usunięty tymczasowo
-import Conferences from './components/sections/Conferences';
-import Contact from './components/sections/Contact';
+import { 
+  Navbar, 
+  Footer,
+  Hero, 
+  About, 
+  Experience, 
+  Projects, 
+  Media, 
+  Conferences, 
+  Contact 
+} from './components';
 
 const App = () => {
   const {
@@ -35,7 +37,7 @@ const App = () => {
           <About />
           <Experience />
           <Projects />
-          {/* Tymczasowo usunięto komponent Media */}
+          <Media />
           <Conferences />
           <Contact />
           <Footer />
