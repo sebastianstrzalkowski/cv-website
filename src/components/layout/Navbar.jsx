@@ -21,6 +21,8 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
             <button onClick={() => scrollToSection('about')} className={`hover:text-green-400 transition-colors ${activeSection === 'about' ? 'text-green-400' : ''}`}>{t('nav.about')}</button>
             <button onClick={() => scrollToSection('projects')} className={`hover:text-green-400 transition-colors ${activeSection === 'projects' ? 'text-green-400' : ''}`}>{t('nav.projects')}</button>
             <button onClick={() => scrollToSection('experience')} className={`hover:text-green-400 transition-colors ${activeSection === 'experience' ? 'text-green-400' : ''}`}>{t('nav.experience')}</button>
+            <button onClick={() => scrollToSection('media')} className={`hover:text-green-400 transition-colors ${activeSection === 'media' ? 'text-green-400' : ''}`}>{t('nav.media')}</button>
+            <button onClick={() => scrollToSection('conferences')} className={`hover:text-green-400 transition-colors ${activeSection === 'conferences' ? 'text-green-400' : ''}`}>{t('nav.conferences')}</button>
             <button onClick={() => scrollToSection('contact')} className={`hover:text-green-400 transition-colors ${activeSection === 'contact' ? 'text-green-400' : ''}`}>{t('nav.contact')}</button>
             <LanguageSwitcher />
           </div>
@@ -45,6 +47,8 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
                 <button onClick={() => scrollToSection('about')} className="text-xl hover:text-green-400 transition-colors">{t('nav.about')}</button>
                 <button onClick={() => scrollToSection('projects')} className="text-xl hover:text-green-400 transition-colors">{t('nav.projects')}</button>
                 <button onClick={() => scrollToSection('experience')} className="text-xl hover:text-green-400 transition-colors">{t('nav.experience')}</button>
+                <button onClick={() => scrollToSection('media')} className="text-xl hover:text-green-400 transition-colors">{t('nav.media')}</button>
+                <button onClick={() => scrollToSection('conferences')} className="text-xl hover:text-green-400 transition-colors">{t('nav.conferences')}</button>
                 <button onClick={() => scrollToSection('contact')} className="text-xl hover:text-green-400 transition-colors">{t('nav.contact')}</button>
               </div>
             </div>

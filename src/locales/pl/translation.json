@@ -4,6 +4,8 @@
     "about": "O mnie",
     "projects": "Projekty",
     "experience": "Doświadczenie",
+    "media": "Media",
+    "conferences": "Konferencje",
     "contact": "Kontakt"
   },
   "hero": {
@@ -39,6 +41,19 @@
     "title": "Projekty",
     "subtitle": "Projekty Poboczne & Współprace",
     "viewProject": "Zobacz projekt"
+  },
+  "media": {
+    "title": "Media",
+    "subtitle": "Dzielę się wiedzą",
+    "description": "Sprawdź moje filmy, w których dzielę się wiedzą i poradnikami na tematy takie jak Java, Blockchain, Infrastruktura Chmurowa i inne.",
+    "watchVideo": "Obejrzyj Film",
+    "viewAllVideos": "Zobacz Wszystkie Filmy"
+  },
+  "conferences": {
+    "title": "Wystąpienia",
+    "subtitle": "Konferencje & Wydarzenia",
+    "description": "Regularnie występuję na konferencjach i wydarzeniach technologicznych na tematy związane z Javą, technologią blockchain i infrastrukturą chmurową.",
+    "viewEvent": "Szczegóły wydarzenia"
   },
   "contact": {
     "title": "Kontakt",

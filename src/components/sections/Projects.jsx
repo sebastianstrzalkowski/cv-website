@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
+import { ExternalLink } from 'lucide-react';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -32,10 +33,23 @@ const Projects = () => {
                     <div className="flex flex-wrap gap-2 mb-4">
                       {developerData.getProjectTechnologies(project.title).map((tech, techIndex) => (
                           <span key={techIndex} className="bg-gray-700 px-2 py-1 rounded text-xs text-green-300">
-                      {tech}
-                    </span>
+                            {tech}
+                          </span>
                       ))}
                     </div>
+                    {project.url && (
+                      <div className="mt-4">
+                        <a 
+                          href={project.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors"
+                        >
+                          {t('projects.viewProject')}
+                          <ExternalLink size={16} className="ml-1" />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
             ))}

@@ -8,6 +8,8 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
+import Media from './components/sections/Media';
+import Conferences from './components/sections/Conferences';
 import Contact from './components/sections/Contact';
 
 const App = () => {
@@ -33,6 +35,8 @@ const App = () => {
           <About />
           <Experience />
           <Projects />
+          <Media />
+          <Conferences />
           <Contact />
           <Footer />
         </div>

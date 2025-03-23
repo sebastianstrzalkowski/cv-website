@@ -4,6 +4,8 @@
     "about": "About",
     "projects": "Projects",
     "experience": "Experience",
+    "media": "Media",
+    "conferences": "Conferences",
     "contact": "Contact"
   },
   "hero": {
@@ -39,6 +41,19 @@
     "title": "Projects",
     "subtitle": "Side Projects & Contributions",
     "viewProject": "View project"
+  },
+  "media": {
+    "title": "Media",
+    "subtitle": "Knowledge Sharing",
+    "description": "Check out my videos where I share insights and tutorials on topics like Java, Blockchain, Cloud Infrastructure, and more.",
+    "watchVideo": "Watch Video",
+    "viewAllVideos": "View All Videos"
+  },
+  "conferences": {
+    "title": "Speaking",
+    "subtitle": "Conferences & Events",
+    "description": "I regularly speak at tech conferences and events on topics including Java development, blockchain technology, and cloud infrastructure.",
+    "viewEvent": "Event Details"
   },
   "contact": {
     "title": "Contact",
