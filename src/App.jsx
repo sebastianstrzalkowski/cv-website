@@ -8,7 +8,7 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
-import Media from './components/sections/Media.jsx';
+// Import Media komponentu usunięty tymczasowo
 import Conferences from './components/sections/Conferences';
 import Contact from './components/sections/Contact';
 
@@ -35,7 +35,7 @@ const App = () => {
           <About />
           <Experience />
           <Projects />
-          <Media />
+          {/* Tymczasowo usunięto komponent Media */}
           <Conferences />
           <Contact />
           <Footer />
