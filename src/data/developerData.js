@@ -323,17 +323,17 @@ const developerData = {
     const lang = i18next.language;
     const translations = {
       pl: {
-        "Inetum — Telco": "Praca z PostgreSQL/PostGIS oraz projekt migracji bazy danych z Sybase do PostgreSQL. Odpowiedzialność za utrzymanie i nowe funkcjonalności.",
+        "Inetum - Telco": "Praca z PostgreSQL/PostGIS oraz projekt migracji bazy danych z Sybase do PostgreSQL. Odpowiedzialność za utrzymanie i nowe funkcjonalności.",
         "Inetum - IoT": "Praca przy aplikacji IoT do monitorowania pojazdów. Odpowiedzialność za utrzymanie i nowe funkcjonalności w mikroserwisie udostępniającym API.",
         "Inetum - Cloud": "Praca nad aplikacją do przetwarzania danych w chmurze, zbudowaną z wykorzystaniem Flink i AWS z użyciem Project Reactor. Odpowiedzialność za infrastrukturę w początkowej fazie projektu oraz nowe funkcjonalności.",
-        "Inetum — Telco CRM": "Projekt IoT i telekomunikacyjny. Odpowiedzialność za komunikację z klientem, utrzymanie aplikacji i rozwój nowych funkcjonalności.",
+        "Inetum - Telco CRM": "Projekt IoT i telekomunikacyjny. Odpowiedzialność za komunikację z klientem, utrzymanie aplikacji i rozwój nowych funkcjonalności.",
         "Bored Founders Club": "Mentor blockchain w grupie deweloperów. Prowadzenie regularnych warsztatów technicznych z zakresu Solidity, Web3 i integracji z łańcuchami bloków. Wsparcie w rozwoju projektów blockchain i smart kontraktów dla członków klubu."
       },
       en: {
-        "Inetum — Telco": "Working with PostgreSQL/PostGIS and Sybase to PostgreSQL database migration project. Responsible for maintenance and new functionalities.",
+        "Inetum - Telco": "Working with PostgreSQL/PostGIS and Sybase to PostgreSQL database migration project. Responsible for maintenance and new functionalities.",
         "Inetum - IoT": "Working on an IoT application for vehicle monitoring. Responsible for maintenance and new functionalities in a microservice providing API.",
         "Inetum - Cloud": "Working on a cloud-based data processing application built with Flink and AWS using Project Reactor. Responsible for infrastructure in the initial phase of the project and new functionalities.",
-        "Inetum — Telco CRM": "IoT and telecommunications project. Responsible for client communication, application maintenance, and development of new functionalities.",
+        "Inetum - Telco CRM": "IoT and telecommunications project. Responsible for client communication, application maintenance, and development of new functionalities.",
         "Bored Founders Club": "Blockchain mentor in developers group. Conducted regular technical workshops on Solidity, Web3, and blockchain integration. Provided support in developing blockchain projects and smart contracts for club members."
       }
     };
