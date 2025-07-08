@@ -372,6 +372,131 @@ const developerData = {
       "Adchitects": ["Solidity", "Ethereum", "NFT", "Smart Contracts"]
     };
     return technologies[title] || [];
+  },
+
+  // Sekcja ze szkoleniami
+  getTrainingsData() {
+    const lang = i18next.language;
+    
+    if (lang === 'pl') {
+      return [
+        {
+          name: "Developer Jutra",
+          description: "Kompleksowy program transformacji kariery programistycznej w erze AI. Szkolenie łączy biznes, architekturę i efektywne wykorzystanie LLM-ów. Program obejmuje 10 intensywnych webinarów z Tomaszem Ducinem, warsztaty z Full-Stack developmentu, DevOps, Event Stormingu oraz praktyczne wykorzystanie AI w codziennej pracy.",
+          date: "18.07.2025",
+          duration: "10 tygodni",
+          provider: "Devstyle",
+          certificate: true,
+          skills: ["Full-Stack", "AI/LLM", "Architektura", "DevOps", "Product Engineering", "Event Storming"]
+        },
+        {
+          name: "Horyzont Lidera",
+          description: "Kompleksowy program rozwijający kompetencje miękkie niezbędne w branży IT. Szkolenie obejmuje zarządzanie zespołem, efektywną komunikację, współpracę z biznesem oraz leadership technologiczny. Program prowadzony przez doświadczonych mentorów z branży IT.",
+          date: "27.06.2025",
+          duration: "12 tygodni",
+          provider: "Devstyle",
+          certificate: true,
+          skills: ["Leadership", "Komunikacja", "Zarządzanie zespołem", "Współpraca IT-Biznes", "Soft skills"]
+        },
+        {
+          name: "Craftsmanship - przybornik profesjonalisty",
+          description: "Intensywny 3-dniowy warsztat łączący kluczowe elementy klasycznej i nowoczesnej inżynierii oprogramowania. Szkolenie obejmuje techniki SOLID, GRASP, DDD, architekturę hexagonalną oraz Clean Code. Program prowadzony w formie warsztatów z refaktoringiem aplikacji biznesowej od modelu anemicznego do architektur warstwowych i hexagonalnych.",
+          date: "22.01.2025",
+          duration: "3 dni",
+          provider: "Bottega IT Minds",
+          certificate: true,
+          skills: ["SOLID", "DDD", "Clean Code", "Architektura Hexagonalna", "TDD", "Refactoring"]
+        },
+        {
+          name: "Apache Flink for Stream Processing",
+          description: "Intensywne 3-dniowe szkolenie z przetwarzania strumieniowego w Apache Flink. Program obejmuje przetwarzanie w czasie zdarzenia, zarządzanie stanem, checkpointing, integrację z Kafką, Flink SQL oraz zaawansowane techniki rozwiązywania problemów i optymalizacji wydajności. Szkolenie prowadzone przez ekspertów Ververica - twórców Apache Flink.",
+          date: "02.08.2022",
+          duration: "3 dni",
+          provider: "Ververica",
+          certificate: true,
+          skills: ["Apache Flink", "Stream Processing", "Event Time", "State Management", "Flink SQL", "Kafka Integration"]
+        },
+        {
+          name: "Reaktywne programowanie w Javie",
+          description: "3-dniowe szkolenie wprowadzające w świat reaktywnego programowania. Program obejmuje podstawy teorii reaktywności, backpressure, biblioteki Mono/Flux, WebFlux i Reactor. Praktyczne warsztaty zawierają implementację pełnego stosu reaktywnego, obsługę zasobów synchronicznych, zaawansowane funkcje Reactor oraz komunikację przez RSocket.",
+          date: "17.11.2021",
+          duration: "3 dni",
+          provider: "Bottega IT Minds",
+          certificate: true,
+          skills: ["Reactor", "WebFlux", "Mono/Flux", "RSocket", "R2DBC", "Reactive Programming"]
+        },
+        {
+          name: "Droga Nowoczesnego Architekta", 
+          description: "Kompleksowy program rozwoju architekta IT składający się z 20 modułów w 7 blokach tematycznych. Obejmuje strategiczne i taktyczne DDD, Event Storming, style architektury korporacyjnej i aplikacyjnej, mikroserwisy, systemy rozproszone, Event Sourcing, CI/CD, infrastrukturę jako kod, Kubernetes, security oraz refactoring z Big Ball of Mud. Ponad 30 godzin materiałów wideo.",
+          date: "24.03.2021",
+          duration: "6 miesięcy",
+          provider: "Devstyle",
+          certificate: true,
+          skills: ["DDD", "Event Storming", "Mikroserwisy", "Event Sourcing", "CQRS", "Kubernetes", "CI/CD", "Architektura hexagonalna"]
+        }
+      ];
+    } else {
+      return [
+        {
+          name: "Developer of Tomorrow",
+          description: "Comprehensive career transformation program for programmers in the AI era. Training combines business, architecture, and effective use of LLMs. The program includes 10 intensive webinars with Tomasz Ducin, workshops on Full-Stack development, DevOps, Event Storming, and practical AI application in daily work.",
+          date: "18.07.2025",
+          duration: "10 weeks",
+          provider: "Devstyle",
+          certificate: true,
+          skills: ["Full-Stack", "AI/LLM", "Architecture", "DevOps", "Product Engineering", "Event Storming"]
+        },
+        {
+          name: "Leader's Horizon",
+          description: "Comprehensive program developing soft skills essential in the IT industry. The training covers team management, effective communication, business collaboration, and technical leadership. Led by experienced mentors from the IT industry.",
+          date: "27.06.2025",
+          duration: "12 weeks",
+          provider: "Devstyle",
+          certificate: true,
+          skills: ["Leadership", "Communication", "Team Management", "IT-Business Collaboration", "Soft skills"]
+        },
+        {
+          name: "Craftsmanship - Professional's Toolkit",
+          description: "Intensive 3-day workshop combining key elements of classical and modern software engineering. Training covers SOLID, GRASP, DDD techniques, hexagonal architecture, and Clean Code. Conducted as workshops with business application refactoring from anemic model to layered and hexagonal architectures.",
+          date: "22.01.2025",
+          duration: "3 days",
+          provider: "Bottega IT Minds",
+          certificate: true,
+          skills: ["SOLID", "DDD", "Clean Code", "Hexagonal Architecture", "TDD", "Refactoring"]
+        },
+        {
+          name: "Apache Flink for Stream Processing",
+          description: "Intensive 3-day training on stream processing with Apache Flink. The program covers event-time processing, state management, checkpointing, Kafka integration, Flink SQL, and advanced troubleshooting and performance optimization techniques. Training conducted by Ververica experts - the creators of Apache Flink.",
+          date: "02.08.2022",
+          duration: "3 days",
+          provider: "Ververica",
+          certificate: true,
+          skills: ["Apache Flink", "Stream Processing", "Event Time", "State Management", "Flink SQL", "Kafka Integration"]
+        },
+        {
+          name: "Reactive Programming in Java",
+          description: "3-day training introducing the world of reactive programming. The program covers reactive theory basics, backpressure, Mono/Flux libraries, WebFlux and Reactor. Practical workshops include full reactive stack implementation, handling synchronous resources, advanced Reactor features, and communication via RSocket.",
+          date: "17.11.2021",
+          duration: "3 days",
+          provider: "Bottega IT Minds",
+          certificate: true,
+          skills: ["Reactor", "WebFlux", "Mono/Flux", "RSocket", "R2DBC", "Reactive Programming"]
+        },
+        {
+          name: "Path of Modern Architect",
+          description: "Comprehensive IT architect development program consisting of 20 modules in 7 thematic blocks. Covers strategic and tactical DDD, Event Storming, corporate and application architecture styles, microservices, distributed systems, Event Sourcing, CI/CD, infrastructure as code, Kubernetes, security, and refactoring from Big Ball of Mud. Over 30 hours of video content.",
+          date: "24.03.2021",
+          duration: "6 months",
+          provider: "Devstyle",
+          certificate: true,
+          skills: ["DDD", "Event Storming", "Microservices", "Event Sourcing", "CQRS", "Kubernetes", "CI/CD", "Hexagonal Architecture"]
+        }
+      ];
+    }
+  },
+  
+  get trainings() {
+    return this.getTrainingsData();
   }
 };
 

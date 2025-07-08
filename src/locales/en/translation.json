@@ -6,6 +6,7 @@
     "experience": "Experience",
     "media": "Media",
     "conferences": "Conferences",
+    "trainings": "Trainings",
     "contact": "Contact"
   },
   "hero": {
@@ -81,6 +82,14 @@
       "success": "Message sent successfully!",
       "error": "Error sending message. Please try again."
     }
+  },
+  "trainings": {
+    "title": "Trainings",
+    "subtitle": "Continuous Professional Development",
+    "description": "I regularly participate in trainings and courses to stay up-to-date with the latest technologies and best practices.",
+    "provider": "Provider",
+    "showMore": "Show more",
+    "showLess": "Show less"
   },
   "footer": {
     "rights": "All rights reserved."

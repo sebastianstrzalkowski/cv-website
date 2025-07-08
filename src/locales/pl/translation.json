@@ -6,6 +6,7 @@
     "experience": "Doświadczenie",
     "media": "Media",
     "conferences": "Konferencje",
+    "trainings": "Szkolenia",
     "contact": "Kontakt"
   },
   "hero": {
@@ -81,6 +82,14 @@
       "success": "Wiadomość wysłana pomyślnie!",
       "error": "Błąd podczas wysyłania wiadomości. Spróbuj ponownie."
     }
+  },
+  "trainings": {
+    "title": "Szkolenia",
+    "subtitle": "Ciągły rozwój zawodowy",
+    "description": "Regularnie uczestniczę w szkoleniach i kursach, aby być na bieżąco z najnowszymi technologiami i najlepszymi praktykami.",
+    "provider": "Organizator",
+    "showMore": "Rozwiń",
+    "showLess": "Zwiń"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone."
