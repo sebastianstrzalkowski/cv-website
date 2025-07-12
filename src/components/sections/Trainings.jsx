@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { BookOpen, Calendar, Award, Clock, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { BookOpen, Calendar, Award, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
 
 const Trainings = () => {
   const { t } = useTranslation();
   const [expandedItems, setExpandedItems] = useState({});
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleExpanded = (index) => {
     setExpandedItems(prev => ({
@@ -20,92 +19,26 @@ const Trainings = () => {
   };
 
   const trainings = developerData.trainings || [];
-  
-  // Responsive slides per view
-  const getSlidesPerView = () => {
-    if (typeof window === 'undefined') return 3;
-    if (window.innerWidth < 768) return 1; // mobile
-    if (window.innerWidth < 1024) return 2; // tablet
-    return 3; // desktop
-  };
-
-  const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView);
-  const maxSlide = Math.max(0, trainings.length - slidesPerView);
-
-  const nextSlide = () => {
-    setCurrentSlide(prev => Math.min(prev + 1, maxSlide));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(prev => Math.max(prev - 1, 0));
-  };
-
-  // Handle window resize
-  React.useEffect(() => {
-    const handleResize = () => {
-      const newSlidesPerView = getSlidesPerView();
-      setSlidesPerView(newSlidesPerView);
-      setCurrentSlide(prev => Math.min(prev, Math.max(0, trainings.length - newSlidesPerView)));
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [trainings.length]);
 
   return (
-    <section id="trainings" className="py-20 bg-gray-800 text-white p-4 relative">
+    <section id="trainings" className="py-20 bg-gray-900 text-white p-4 relative">
       {/* Background accents */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-green-500 rounded-full opacity-5 blur-3xl"></div>
+      <div className="absolute top-0 left-1/3 w-96 h-96 bg-green-500 rounded-full opacity-10 blur-3xl"></div>
       
-      <div className="container mx-auto max-w-5xl relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
-          <span className="inline-block bg-green-500 bg-opacity-20 text-green-400 px-4 py-1 rounded-full text-sm font-medium mb-4">{t('trainings.title')}</span>
+          <span className="inline-block bg-green-400 bg-opacity-30 text-green-300 px-4 py-1 rounded-full text-sm font-medium mb-4">{t('trainings.title')}</span>
           <h2 className="text-3xl md:text-4xl font-bold">{t('trainings.subtitle')}</h2>
           <p className="text-gray-300 mt-4 max-w-xl mx-auto">{t('trainings.description')}</p>
         </div>
         
-        <div className="relative">
-          {/* Navigation buttons */}
-          {trainings.length > slidesPerView && (
-            <>
-              <button
-                onClick={prevSlide}
-                disabled={currentSlide === 0}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-green-500 hover:bg-green-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white p-2 rounded-full transition-colors"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={nextSlide}
-                disabled={currentSlide >= maxSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-green-500 hover:bg-green-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white p-2 rounded-full transition-colors"
-              >
-                <ChevronRight size={24} />
-              </button>
-            </>
-          )}
-
-          {/* Slider container */}
-          <div className="overflow-hidden">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {trainings.map((training, index) => (
             <div 
-              className="flex transition-transform duration-300 ease-in-out"
-              style={{ 
-                transform: `translateX(-${currentSlide * 100}%)`,
-                width: `${Math.ceil(trainings.length / slidesPerView) * 100}%`
-              }}
+              key={index} 
+              className="bg-gray-800 bg-opacity-90 rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-green-900 hover:shadow-lg group"
             >
-              {Array.from({ length: Math.ceil(trainings.length / slidesPerView) }).map((_, slideIndex) => (
-                <div key={slideIndex} className="flex gap-6 w-full flex-shrink-0">
-                  {trainings.slice(slideIndex * slidesPerView, (slideIndex + 1) * slidesPerView).map((training, cardIndex) => {
-                    const actualIndex = slideIndex * slidesPerView + cardIndex;
-                    return (
-                      <div 
-                        key={actualIndex} 
-                        className={`bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-green-500 transition-all duration-300 group ${
-                          slidesPerView === 1 ? 'w-full' : 
-                          slidesPerView === 2 ? 'w-1/2' : 'w-1/3'
-                        }`}
-                      >
+              <div className="bg-gradient-to-r from-green-400 to-teal-400 h-2"></div>
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="bg-green-500 bg-opacity-20 p-3 rounded-lg">
@@ -121,15 +54,15 @@ const Trainings = () => {
                 </h3>
                 
                 <div className="mb-4">
-                  <p className={`text-gray-400 text-sm ${!expandedItems[actualIndex] && isLongDescription(training.description) ? 'line-clamp-3' : ''}`}>
+                  <p className={`text-gray-400 text-sm ${!expandedItems[index] && isLongDescription(training.description) ? 'line-clamp-3' : ''}`}>
                     {training.description}
                   </p>
                   {isLongDescription(training.description) && (
                     <button
-                      onClick={() => toggleExpanded(actualIndex)}
+                      onClick={() => toggleExpanded(index)}
                       className="text-green-400 hover:text-green-300 text-sm mt-2 flex items-center gap-1 transition-colors"
                     >
-                      {expandedItems[actualIndex] ? (
+                      {expandedItems[index] ? (
                         <>
                           {t('trainings.showLess') || 'Zwiń'}
                           <ChevronUp size={16} />
@@ -162,7 +95,7 @@ const Trainings = () => {
                   {training.skills && training.skills.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex} 
-                      className="bg-gray-800 text-green-400 px-2 py-1 rounded text-xs font-medium"
+                      className="bg-gray-700 px-2 py-1 rounded text-xs text-green-300"
                     >
                       {skill}
                     </span>
@@ -176,29 +109,9 @@ const Trainings = () => {
                     </p>
                   </div>
                 )}
-                      </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
+              </div>
             </div>
-          </div>
-
-          {/* Slide indicators */}
-          {trainings.length > slidesPerView && (
-            <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: maxSlide + 1 }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    currentSlide === index ? 'bg-green-500' : 'bg-gray-600'
-                  }`}
-                />
-              ))}
-            </div>
-          )}
+          ))}
         </div>
       </div>
     </section>
