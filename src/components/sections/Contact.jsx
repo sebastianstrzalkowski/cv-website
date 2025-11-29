@@ -3,6 +3,7 @@ import { Mail, Phone, Linkedin, ArrowRight, Github, MessageCircle } from 'lucide
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import developerData from '../../data/developerData';
+import RevealOnScroll from '../ui/RevealOnScroll';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -25,29 +26,30 @@ const Contact = () => {
     };
 
     emailjs.send(
-        'service_2yrvjqd',
-        'template_bg2ua91',
-        templateParams,
-        'mYDSK-Ps24LOITgNi'
+      'service_2yrvjqd',
+      'template_bg2ua91',
+      templateParams,
+      'mYDSK-Ps24LOITgNi'
     )
-    .then((result) => {
-      console.log('Email sent successfully:', result.text);
-      setSuccess(true);
-      setLoading(false);
-      e.target.reset();
-    }, (error) => {
-      console.error('Error sending email:', error.text);
-      setError(true);
-      setLoading(false);
-    });
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        setSuccess(true);
+        setLoading(false);
+        e.target.reset();
+      }, (error) => {
+        console.error('Error sending email:', error.text);
+        setError(true);
+        setLoading(false);
+      });
   };
 
   return (
-      <section id="contact" className="py-20 bg-gray-800 text-white p-4 relative">
-        {/* Background accents */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-green-500 rounded-full opacity-5 blur-3xl"></div>
+    <section id="contact" className="py-20 bg-gray-800 text-white p-4 relative">
+      {/* Background accents */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-green-500 rounded-full opacity-5 blur-3xl"></div>
 
-        <div className="container mx-auto max-w-5xl relative z-10">
+      <div className="container mx-auto max-w-5xl relative z-10">
+        <RevealOnScroll width="100%">
           <div className="text-center mb-12">
             <span className="inline-block bg-green-500 bg-opacity-20 text-green-400 px-4 py-1 rounded-full text-sm font-medium mb-4">{t('contact.title')}</span>
             <h2 className="text-3xl md:text-4xl font-bold">{t('contact.subtitle')}</h2>
@@ -145,59 +147,60 @@ const Contact = () => {
                   <div>
                     <label className="block text-sm text-gray-400 mb-1">{t('contact.form.name')}</label>
                     <input
-                        type="text"
-                        name="from_name"
-                        placeholder={t('contact.form.namePlaceholder')}
-                        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-500 transition-colors"
-                        required
+                      type="text"
+                      name="from_name"
+                      placeholder={t('contact.form.namePlaceholder')}
+                      className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-500 transition-colors"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-sm text-gray-400 mb-1">{t('contact.form.email')}</label>
                     <input
-                        type="email"
-                        name="reply_to"
-                        placeholder={t('contact.form.emailPlaceholder')}
-                        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-500 transition-colors"
-                        required
+                      type="email"
+                      name="reply_to"
+                      placeholder={t('contact.form.emailPlaceholder')}
+                      className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-500 transition-colors"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-sm text-gray-400 mb-1">{t('contact.form.message')}</label>
                     <textarea
-                        name="message"
-                        placeholder={t('contact.form.messagePlaceholder')}
-                        rows="4"
-                        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-500 transition-colors resize-y"
-                        required
+                      name="message"
+                      placeholder={t('contact.form.messagePlaceholder')}
+                      rows="4"
+                      className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-500 transition-colors resize-y"
+                      required
                     ></textarea>
                   </div>
                   <button
-                      type="submit"
-                      className="bg-green-600 hover:bg-green-700 w-full text-white px-6 py-3 rounded-lg flex items-center justify-center transition-all font-medium disabled:opacity-70 disabled:cursor-not-allowed"
-                      disabled={loading}
+                    type="submit"
+                    className="bg-green-600 hover:bg-green-700 w-full text-white px-6 py-3 rounded-lg flex items-center justify-center transition-all font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                    disabled={loading}
                   >
                     {loading ? t('contact.form.sending') : t('contact.form.send')}
                     {!loading && <ArrowRight className="ml-2" size={18} />}
                   </button>
 
                   {success && (
-                      <div className="bg-green-500 bg-opacity-20 text-green-400 p-3 rounded-lg text-center">
-                        {t('contact.form.success')}
-                      </div>
+                    <div className="bg-green-500 bg-opacity-20 text-green-400 p-3 rounded-lg text-center">
+                      {t('contact.form.success')}
+                    </div>
                   )}
 
                   {error && (
-                      <div className="bg-red-500 bg-opacity-20 text-red-400 p-3 rounded-lg text-center">
-                        {t('contact.form.error')}
-                      </div>
+                    <div className="bg-red-500 bg-opacity-20 text-red-400 p-3 rounded-lg text-center">
+                      {t('contact.form.error')}
+                    </div>
                   )}
                 </form>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </RevealOnScroll>
+      </div>
+    </section>
   );
 };
 
