@@ -436,7 +436,7 @@ const developerData = {
         },
         {
           name: "Droga Nowoczesnego Architekta",
-          description: "Kompleksowy program rozwoju architekta IT składający się z 20 modułów w 7 blokach tematycznych. Obejmuje strategiczne i taktyczne DDD, Event Storming, style architektury korporacyjnej i aplikacyjnej, mikroserwisy, systemy rozproszone, Event Sourcing, CI/CD, infrastrukturę jako kod, Kubernetes, security oraz refactoring z Big Ball of Mud. Ponad 30 godzin materiałów wideo.",
+          description: "Kompleksowy program rozwoju architekta IT składający się z 20 modułów w 7 blokach tematycznych. Obejmuje strategiczne i taktyczne DDD, Event Storming, style architektury korporacyjnej i aplikacyjnej, mikroserwis, systemy rozproszone, Event Sourcing, CI/CD, infrastrukturę jako kod, Kubernetes, security oraz refactoring z Big Ball of Mud. Ponad 30 godzin materiałów wideo.",
           date: "24.03.2021",
           duration: "6 miesięcy",
           provider: "Devstyle",
@@ -486,7 +486,7 @@ const developerData = {
           name: "Reactive Programming in Java",
           description: "3-day training introducing the world of reactive programming. The program covers reactive theory basics, backpressure, Mono/Flux libraries, WebFlux and Reactor. Practical workshops include full reactive stack implementation, handling synchronous resources, advanced Reactor features, and communication via RSocket.",
           date: "17.11.2021",
-          duration: "3 days",
+          duration: "3 dni",
           provider: "Bottega IT Minds",
           certificate: true,
           skills: ["Reactor", "WebFlux", "Mono/Flux", "RSocket", "R2DBC", "Reactive Programming"]
@@ -498,7 +498,7 @@ const developerData = {
           duration: "6 months",
           provider: "Devstyle",
           certificate: true,
-          skills: ["DDD", "Event Storming", "Microservices", "Event Sourcing", "CQRS", "Kubernetes", "CI/CD", "Hexagonal Architecture"]
+          skills: ["DDD", "Event Storming", "Microservices", "Event Sourcing", "CQRS", "Kubernetes", "CI/CD", "Architektura hexagonalna"]
         }
       ];
     }
