@@ -119,10 +119,17 @@ const developerData = {
   ],
   experience: [
     {
-      position: "Software Developer",
-      company: "Inetum — Telco",
+      position: "DLT Engineer",
+      company: "ASTEK",
       get period() {
-        return formatPeriod("09.2024", "obecnie");
+        return formatPeriod("08.2025", "obecnie");
+      }
+    },
+    {
+      position: "Software Developer",
+      company: "Inetum - Telco",
+      get period() {
+        return formatPeriod("09.2024", "07.2025");
       }
     },
     {
@@ -141,7 +148,7 @@ const developerData = {
     },
     {
       position: "Software Developer",
-      company: "Inetum — Telco CRM",
+      company: "Inetum - Telco CRM",
       get period() {
         return formatPeriod("07.2018", "07.2022");
       }
@@ -151,13 +158,13 @@ const developerData = {
     {
       get degree() {
         return i18next.language === 'pl'
-            ? "Inżynier elektroniki i telekomunikacji"
-            : "Electronics and Telecommunications Engineer";
+          ? "Inżynier elektroniki i telekomunikacji"
+          : "Electronics and Telecommunications Engineer";
       },
       get school() {
         return i18next.language === 'pl'
-            ? "Wojskowa Akademia Techniczna w Warszawie"
-            : "Military University of Technology in Warsaw";
+          ? "Wojskowa Akademia Techniczna w Warszawie"
+          : "Military University of Technology in Warsaw";
       },
       period: ""
     }
@@ -180,7 +187,7 @@ const developerData = {
   // Sekcja z mediami
   getMediaData() {
     const lang = i18next.language;
-    
+
     if (lang === 'pl') {
       return [
         {
@@ -231,17 +238,17 @@ const developerData = {
       ];
     }
   },
-  
+
   get media() {
     return this.getMediaData();
   },
-  
+
   mediaChannel: "https://www.youtube.com/@strz4la",
-  
+
   // Sekcja z konferencjami
   getConferencesData() {
     const lang = i18next.language;
-    
+
     if (lang === 'pl') {
       return [
         {
@@ -314,15 +321,16 @@ const developerData = {
       ];
     }
   },
-  
+
   get conferences() {
     return this.getConferencesData();
   },
-  
+
   getExperienceDescription(company) {
     const lang = i18next.language;
     const translations = {
       pl: {
+        "ASTEK": "Projektowanie i tworzenie rozwiązań bankowych na blockchainie.",
         "Inetum - Telco": "Praca z PostgreSQL/PostGIS oraz projekt migracji bazy danych z Sybase do PostgreSQL. Odpowiedzialność za utrzymanie i nowe funkcjonalności.",
         "Inetum - IoT": "Praca przy aplikacji IoT do monitorowania pojazdów. Odpowiedzialność za utrzymanie i nowe funkcjonalności w mikroserwisie udostępniającym API.",
         "Inetum - Cloud": "Praca nad aplikacją do przetwarzania danych w chmurze, zbudowaną z wykorzystaniem Flink i AWS z użyciem Project Reactor. Odpowiedzialność za infrastrukturę w początkowej fazie projektu oraz nowe funkcjonalności.",
@@ -330,6 +338,7 @@ const developerData = {
         "Bored Founders Club": "Mentor blockchain w grupie deweloperów. Prowadzenie regularnych warsztatów technicznych z zakresu Solidity, Web3 i integracji z łańcuchami bloków. Wsparcie w rozwoju projektów blockchain i smart kontraktów dla członków klubu."
       },
       en: {
+        "ASTEK": "Designing and creating banking solutions on blockchain.",
         "Inetum - Telco": "Working with PostgreSQL/PostGIS and Sybase to PostgreSQL database migration project. Responsible for maintenance and new functionalities.",
         "Inetum - IoT": "Working on an IoT application for vehicle monitoring. Responsible for maintenance and new functionalities in a microservice providing API.",
         "Inetum - Cloud": "Working on a cloud-based data processing application built with Flink and AWS using Project Reactor. Responsible for infrastructure in the initial phase of the project and new functionalities.",
@@ -377,7 +386,7 @@ const developerData = {
   // Sekcja ze szkoleniami
   getTrainingsData() {
     const lang = i18next.language;
-    
+
     if (lang === 'pl') {
       return [
         {
@@ -426,7 +435,7 @@ const developerData = {
           skills: ["Reactor", "WebFlux", "Mono/Flux", "RSocket", "R2DBC", "Reactive Programming"]
         },
         {
-          name: "Droga Nowoczesnego Architekta", 
+          name: "Droga Nowoczesnego Architekta",
           description: "Kompleksowy program rozwoju architekta IT składający się z 20 modułów w 7 blokach tematycznych. Obejmuje strategiczne i taktyczne DDD, Event Storming, style architektury korporacyjnej i aplikacyjnej, mikroserwisy, systemy rozproszone, Event Sourcing, CI/CD, infrastrukturę jako kod, Kubernetes, security oraz refactoring z Big Ball of Mud. Ponad 30 godzin materiałów wideo.",
           date: "24.03.2021",
           duration: "6 miesięcy",
@@ -494,7 +503,7 @@ const developerData = {
       ];
     }
   },
-  
+
   get trainings() {
     return this.getTrainingsData();
   }
