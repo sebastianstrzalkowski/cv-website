@@ -76,9 +76,9 @@ const developerData = {
   projects: [
     {
       title: "Liqfinity",
-      url: "https://app.testnet.liqfinity.com",
+      url: "https://liqfinity.com",
       get period() {
-        return formatPeriod("06.2024", "obecnie");
+        return formatPeriod("06.2024", "10.2025");
       }
     },
     {
