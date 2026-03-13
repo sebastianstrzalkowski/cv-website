@@ -252,6 +252,14 @@ const developerData = {
     if (lang === 'pl') {
       return [
         {
+          name: "Środowe Debaty Rynkowe #4",
+          description: "Udział jako panelista w debacie organizowanej przez Cashify i Warsaw Enterprise Institute na temat przyszłości Ethereum (\"Ethereum w 2026: hit czy kit?\"). Merytoryczna dyskusja dotycząca skalowalności L2, potencjału „Lepszego Bitcoina” i fundamentów sieci.",
+          date: "11.03.2026",
+          location: "Warszawa, Polska",
+          image: "/images/conferences/cashify_debate.jpeg",
+          tags: ["Ethereum", "DeFi", "Web3", "Debata", "Smart Contracts"]
+        },
+        {
           name: "JVMDays Poznań 2025",
           description: "Warsztat \"Smart kontrakty Ethereum\" na wewnętrznej konferencji firmy - Technologia blockchain i Ethereum, podstawy języka Solidity, interakcja Java-Ethereum przez Web3j, standardy tokenów Ethereum oraz wdrażanie kontraktów na testnet.",
           date: "26.03.2025",
@@ -286,6 +294,14 @@ const developerData = {
       ];
     } else {
       return [
+        {
+          name: "Wednesday Market Debates #4",
+          description: "Participation as a panelist in a debate organized by Cashify and Warsaw Enterprise Institute on the future of Ethereum (\"Ethereum in 2026: Hit or Flop?\"). A substantive discussion covering L2 scalability, the potential of the \"Better Bitcoin\", and network fundamentals.",
+          date: "11.03.2026",
+          location: "Warsaw, Poland",
+          image: "/images/conferences/cashify_debate.jpeg",
+          tags: ["Ethereum", "DeFi", "Web3", "Debate", "Smart Contracts"]
+        },
         {
           name: "JVMDays Poznań 2025",
           description: "Workshop \"Ethereum Smart Contracts\" at the internal company conference - Blockchain and Ethereum technology, Solidity language basics, Java-Ethereum interaction through Web3j, Ethereum token standards, and deploying contracts to testnet.",
