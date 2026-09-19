@@ -64,29 +64,27 @@ export const calculateYearsOfExperience = (startMonth = 7, startYear = 2018) => 
 const developerData = {
   name: "Sebastian Strzałkowski",
   firstName: "Sebastian",
-  title: "Software Developer",
+  title: "Senior DLT Engineer & Blockchain Architect",
   get yearsOfExperience() {
     return calculateYearsOfExperience(7, 2018);
   },
   skills: [
-    { name: "Java (8, 11, 17, 21)" },
-    { name: "Spring Boot 2, 3" },
-    { name: "PostgreSQL" },
+    { name: "Solidity" },
+    { name: "Ethereum & L2 (Base, Polygon)" },
+    { name: "Hyperledger & Kaleido" },
+    { name: "EVM & Smart Contracts" },
+    { name: "Web3j" },
+    { name: "Java (17, 21)" },
+    { name: "Spring Boot 3, 4" },
+    { name: "Distributed Systems" },
+    { name: "Apache Flink" },
     { name: "Project Reactor" },
+    { name: "PostgreSQL" },
+    { name: "Redis" },
     { name: "AWS" },
     { name: "Terraform" },
-    { name: "Solidity" },
-    { name: "Ethereum" },
-    { name: "Hyperledger" },
-    { name: "Base" },
-    { name: "Polygon" },
-    { name: "Docker" },
-    { name: "Kubernetes" },
-    { name: "Redis" },
-    { name: "GitHub Actions" },
-    { name: "Node.js" },
-    { name: "Express.js" },
-    { name: "Nest.js" }
+    { name: "Docker & Kubernetes" },
+    { name: "GitHub Actions / CI/CD" }
   ],
   projects: [
     {
@@ -200,11 +198,14 @@ const developerData = {
     discord: "strz4la"
   },
   additionalTech: [
-    "Claude Sonnet",
-    "Copilot",
-    "Kaleido",
+    "Antigravity",
+    "Claude (AI-assisted Dev)",
+    "GitHub Copilot",
     "Tatum",
     "Fireblocks",
+    "Casper Network (Rust)",
+    "Hardhat / Foundry",
+    "Node.js",
     "IntelliJ"
   ],
   // Sekcja z mediami
@@ -369,22 +370,22 @@ const developerData = {
     const lang = i18next.language;
     const translations = {
       pl: {
-        "GFT": "Praca dla wiodącego banku będącego pionierem w dziedzinie technologii blockchain i tokenizacji aktywów. Projektowanie i rozwój rozwiązań w oparciu o stack Hyperledger oraz platformę BaaS Kaleido. Opracowywanie rozwiązań i prospektów technicznych dla potencjalnych klientów oraz prowadzenie rekrutacji technicznych w obszarze DLT.",
-        "ASTEK": "Rozwój i implementacja rozwiązań bankowych klasy enterprise opartych na technologii rozproszonych rejestrów (DLT) i blockchain. Projektowanie architektury do tokenizacji cyfrowych aktywów, integracja z wewnętrznymi systemami bankowymi oraz wsparcie koncepcyjne i technologiczne. Prowadzenie technicznych rozmów rekrutacyjnych oraz rozwój kompetencji inżynierskich w obszarze DLT.",
-        "Inetum - Telco": "Praca z PostgreSQL/PostGIS oraz projekt migracji bazy danych z Sybase do PostgreSQL. Odpowiedzialność za utrzymanie i nowe funkcjonalności.",
-        "Inetum - IoT": "Praca przy aplikacji IoT do monitorowania pojazdów. Odpowiedzialność za utrzymanie i nowe funkcjonalności w mikroserwisie udostępniającym API.",
-        "Inetum - Cloud": "Praca nad aplikacją do przetwarzania danych w chmurze, zbudowaną z wykorzystaniem Flink i AWS z użyciem Project Reactor. Odpowiedzialność za infrastrukturę w początkowej fazie projektu oraz nowe funkcjonalności.",
-        "Inetum - Telco CRM": "Projekt IoT i telekomunikacyjny. Odpowiedzialność za komunikację z klientem, utrzymanie aplikacji i rozwój nowych funkcjonalności.",
-        "Bored Founders Club": "Mentor blockchain w grupie deweloperów. Prowadzenie regularnych warsztatów technicznych z zakresu Solidity, Web3 i integracji z łańcuchami bloków. Wsparcie w rozwoju projektów blockchain i smart kontraktów dla członków klubu."
+        "GFT": "Praca dla wiodącego banku będącego pionierem w dziedzinie technologii blockchain i tokenizacji aktywów. Projektowanie i rozwój architektury DLT w oparciu o Hyperledger oraz platformę BaaS Kaleido. Opracowywanie rozwiązań technicznych dla klientów instytucjonalnych, projektowanie bezpiecznych integracji on-chain oraz prowadzenie rekrutacji technicznych w obszarze DLT.",
+        "ASTEK": "Rozwój i implementacja rozwiązań bankowych klasy enterprise opartych na technologii rozproszonych rejestrów (DLT) i blockchain. Projektowanie architektury do tokenizacji cyfrowych aktywów (RWA), integracja z wewnętrznymi systemami bankowymi oraz wsparcie koncepcyjne i technologiczne. Prowadzenie technicznych rozmów rekrutacyjnych oraz rozwój kompetencji inżynierskich w obszarze DLT.",
+        "Inetum - Telco": "Architektura danych i optymalizacja wydajności w systemach telekomunikacyjnych dużej skali. Praca z PostgreSQL/PostGIS, projekt bezprzestojowej migracji bazy danych z Sybase do PostgreSQL, zapewnienie spójności transakcyjnej i wysokiej dostępności (HA).",
+        "Inetum - IoT": "Projektowanie mikroserwisów o wysokiej przepustowości dla platformy IoT monitorującej pojazdy w czasie rzeczywistym. Tworzenie wydajnych interfejsów API, obsługa strumieni telemetrycznych oraz integracja z systemami rozproszonymi.",
+        "Inetum - Cloud": "Aplikacja do przetwarzania strumieniowego w chmurze (AWS) o wysokiej skali, zbudowana w oparciu o Apache Flink oraz Project Reactor (programowanie reaktywne). Odpowiedzialność za architekturę infrastruktury chmurowej (IaC), optymalizację potoków danych w czasie rzeczywistym oraz skalowalność.",
+        "Inetum - Telco CRM": "Systemy telekomunikacyjne i IoT. Rozwój modułów CRM, integracje systemowe, zapewnienie skalowalności i odporności na obciążenia oraz bezpośrednia współpraca technologiczna z klientem biznesowym.",
+        "Bored Founders Club": "Mentor techniczny w społeczności deweloperów Web3. Prowadzenie regularnych warsztatów technicznych z zakresu pisania bezpiecznych smart kontraktów w Solidity, bezpieczeństwa EVM, standardów ERC oraz integracji aplikacji z łańcuchami bloków."
       },
       en: {
-        "GFT": "Working for a leading bank pioneering blockchain technology and asset tokenization. Designing and developing solutions based on the Hyperledger stack and Kaleido BaaS platform. Developing technical solutions and architecture proposals for prospective clients, along with conducting technical recruitment in the DLT domain.",
-        "ASTEK": "Development and implementation of enterprise banking solutions based on distributed ledger technology (DLT) and blockchain. Designing architecture for digital asset tokenization, integrating with internal banking systems, and providing technical advisory. Conducting technical recruitment interviews and expanding engineering capabilities in the DLT domain.",
-        "Inetum - Telco": "Working with PostgreSQL/PostGIS and Sybase to PostgreSQL database migration project. Responsible for maintenance and new functionalities.",
-        "Inetum - IoT": "Working on an IoT application for vehicle monitoring. Responsible for maintenance and new functionalities in a microservice providing API.",
-        "Inetum - Cloud": "Working on a cloud-based data processing application built with Flink and AWS using Project Reactor. Responsible for infrastructure in the initial phase of the project and new functionalities.",
-        "Inetum - Telco CRM": "IoT and telecommunications project. Responsible for client communication, application maintenance, and development of new functionalities.",
-        "Bored Founders Club": "Blockchain mentor in developers group. Conducted regular technical workshops on Solidity, Web3, and blockchain integration. Provided support in developing blockchain projects and smart contracts for club members."
+        "GFT": "Working for a leading tier-1 bank pioneering blockchain technology and digital asset tokenization. Designing and developing enterprise DLT architecture based on Hyperledger and the Kaleido BaaS platform. Authoring institutional technical proposals, architecting secure on-chain integrations, and leading technical recruitment in the DLT domain.",
+        "ASTEK": "Development and implementation of enterprise banking solutions based on distributed ledger technology (DLT) and blockchain. Designing architecture for digital asset tokenization (RWA), integrating with core banking systems, and providing technical advisory. Conducting technical recruitment interviews and advancing engineering capabilities in the DLT domain.",
+        "Inetum - Telco": "Data architecture and performance optimization in large-scale telecommunications systems. Working with PostgreSQL/PostGIS, executing zero-downtime database migration from Sybase to PostgreSQL, ensuring transactional integrity and high availability (HA).",
+        "Inetum - IoT": "Designing high-throughput microservices for a real-time IoT vehicle tracking platform. Implementing resilient APIs, handling telemetry streams, and integrating with distributed messaging systems.",
+        "Inetum - Cloud": "Large-scale cloud stream processing application on AWS, built with Apache Flink and Project Reactor (reactive programming). Responsible for cloud infrastructure architecture (IaC), real-time data pipeline optimization, and high scalability.",
+        "Inetum - Telco CRM": "Telecommunications and IoT systems. Development of core CRM modules, system integrations, ensuring high resilience under heavy loads, and close technical collaboration with business stakeholders.",
+        "Bored Founders Club": "Technical blockchain mentor in a Web3 developer community. Conducting regular technical workshops on secure Solidity smart contracts, EVM security patterns, ERC standards, and dApp-blockchain integrations."
       }
     };
 
@@ -394,32 +395,32 @@ const developerData = {
     const lang = i18next.language;
     const translations = {
       pl: {
-        "Liqfinity": "Projekt w obszarze zdecentralizowanych finansów (DeFi). Odpowiedzialność za infrastrukturę chmurową i przywództwo zespołu.",
-        "Bored Founders Club": "Mentor blockchain w grupie deweloperów. Prowadzenie regularnych warsztatów technicznych z zakresu Solidity, Web3 i integracji z łańcuchami bloków. Wsparcie w rozwoju projektów blockchain i smart kontraktów dla członków klubu.",
-        "Wennect": "Projekt rekrutacyjny oparty na technologii Blockchain. Wykorzystuje Solidity i maszynę EVM. Odpowiedzialność za smart kontrakty oraz doradztwo w zakresie rozwoju rozwiązań blockchain.",
-        "Mystra": "Projekt NFT na sieci Casper Network wraz z botami na Telegram i Discord. Projekt oparty na smart kontraktach napisanych w Rust, boty stworzone przy użyciu Java 11. W projekcie również kierowanie zespołem 2 deweloperów.",
-        "MetaDriverseClub": "Aplikacja wykorzystująca blockchain Ethereum dla ekskluzywnego klubu samochodowego. Tokenizacja członkostwa i aktywów klubu w formie NFT. Odpowiedzialność za smart kontrakty i mechanizmy tokenu członkowskiego.",
-        "Adchitects": "Projekt marketplace NFT na sieci Ethereum. Projekt oparty na smart kontraktach Solidity."
+        "Liqfinity": "Protokół zdecentralizowanych finansów (DeFi). Projektowanie architektury systemów non-custodial, integracja pul płynności, zarządzanie ryzykiem on-chain, infrastruktura chmurowa AWS z automatyzacją Terraform oraz leadership techniczny zespołu.",
+        "Bored Founders Club": "Mentoring i doradztwo techniczne dla deweloperów Web3. Prowadzenie warsztatów z pisania bezpiecznych smart kontraktów w Solidity, architektury protokołów oraz wdrażania rozwiązań na sieciach EVM.",
+        "Wennect": "Platforma rekrutacyjna nowej generacji oparta na blockchainie EVM. Projektowanie smart kontraktów w Solidity, mechanizmów depozytowych (escrow) oraz doradztwo strategiczne w architekturze rozwiązań Web3.",
+        "Mystra": "Ekosystem NFT na enterprise'owym blockchainie Casper Network (L1 PoS). Projektowanie logiki smart kontraktów w języku Rust, budowa hybrydowej infrastruktury off-chain (boty Java 11) oraz kierowanie 2-osobowym zespołem deweloperów.",
+        "MetaDriverseClub": "Zdecentralizowana platforma tokenizacji członkostwa i unikalnych aktywów motoryzacyjnych (NFT) na Ethereum. Projektowanie kontraktów ERC-721/1155, mechaniki uprawnień on-chain i bezpiecznego mintingu.",
+        "Adchitects": "Projekt zdecentralizowanego marketplace'u NFT na sieci Ethereum. Architektura smart kontraktów w Solidity, obsługa transakcji on-chain oraz optymalizacja zużycia gasu."
       },
       en: {
-        "Liqfinity": "Project in the area of decentralized finance (DeFi). Responsibility for cloud infrastructure and team leadership.",
-        "Bored Founders Club": "Blockchain mentor in developers group. Conducted regular technical workshops on Solidity, Web3, and blockchain integration. Provided support in developing blockchain projects and smart contracts for club members.",
-        "Wennect": "Recruiting project based on Blockchain technology. Uses Solidity and EVM machine. Responsibility for smart contracts and advisory role for blockchain solutions development.",
-        "Mystra": "NFT project on Casper Network with Telegram and Discord bots. Project based on Rust smart contracts, bots created with Java 11. In the project also led a team of 2 developers.",
-        "MetaDriverseClub": "Application using Ethereum blockchain for an exclusive car club. Tokenization of club membership and assets as NFTs. Responsibility for smart contracts and membership token mechanisms.",
-        "Adchitects": "NFT marketplace project on Ethereum network. Project based on Solidity smart contracts."
+        "Liqfinity": "Decentralized Finance (DeFi) protocol. Architecting non-custodial systems, liquidity pool integrations, on-chain risk mitigation, AWS cloud infrastructure automated via Terraform, and technical team leadership.",
+        "Bored Founders Club": "Technical mentoring and advisory for Web3 developers. Running workshops on secure Solidity smart contracts, protocol architecture, and EVM deployment.",
+        "Wennect": "Next-gen talent marketplace powered by EVM blockchain. Designing Solidity smart contracts, trustless escrow mechanisms, and strategic advisory on Web3 system architecture.",
+        "Mystra": "NFT ecosystem on enterprise-grade Casper Network (L1 PoS). Implementing smart contract logic in Rust, architecting off-chain microservices/bots (Java 11), and leading a 2-developer team.",
+        "MetaDriverseClub": "Decentralized membership & automotive asset tokenization platform (NFT) on Ethereum. Designing ERC-721/1155 contracts, on-chain permission mechanics, and secure minting workflows.",
+        "Adchitects": "Decentralized NFT marketplace on Ethereum. Solidity smart contract architecture, on-chain settlement mechanisms, and gas optimization."
       }
     };
     return translations[lang]?.[title] || translations.pl[title] || "";
   },
   getProjectTechnologies(title) {
     const technologies = {
-      "Liqfinity": ["Blockchain", "AWS", "Terraform", "Solidity", "Cloud Infrastructure"],
-      "Bored Founders Club": ["Blockchain", "Solidity", "Smart Contracts", "Web3", "Mentoring", "Workshops"],
-      "Wennect": ["Solidity", "EVM", "Blockchain", "Advisory"],
-      "Mystra": ["Casper Network", "Rust", "Java 11", "NFT", "Telegram Bot", "Discord Bot", "Team Leadership"],
-      "MetaDriverseClub": ["Ethereum", "NFT", "Solidity", "Smart Contracts", "Web3"],
-      "Adchitects": ["Solidity", "Ethereum", "NFT", "Smart Contracts"]
+      "Liqfinity": ["DeFi", "Solidity", "AWS", "Terraform", "Cloud Infrastructure", "Risk Management"],
+      "Bored Founders Club": ["Solidity", "Smart Contracts", "EVM", "Web3", "Security Audit", "Mentoring"],
+      "Wennect": ["Solidity", "EVM", "Smart Contracts", "Escrow", "Web3 Advisory"],
+      "Mystra": ["Casper Network (PoS)", "Rust", "Smart Contracts", "Java 11", "NFT", "Team Leadership"],
+      "MetaDriverseClub": ["Ethereum", "NFT (ERC-721/1155)", "Solidity", "Smart Contracts", "Web3"],
+      "Adchitects": ["Solidity", "Ethereum", "NFT Marketplace", "Smart Contracts", "Gas Optimization"]
     };
     return technologies[title] || [];
   },
