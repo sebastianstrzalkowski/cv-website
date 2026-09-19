@@ -50,10 +50,24 @@ const formatPeriod = (startDate, endDate) => {
   }
 };
 
+export const calculateYearsOfExperience = (startMonth = 7, startYear = 2018) => {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth() + 1; // 1-12
+  let years = currentYear - startYear;
+  if (currentMonth < startMonth) {
+    years -= 1;
+  }
+  return years;
+};
+
 const developerData = {
   name: "Sebastian Strzałkowski",
   firstName: "Sebastian",
   title: "Software Developer",
+  get yearsOfExperience() {
+    return calculateYearsOfExperience(7, 2018);
+  },
   skills: [
     { name: "Java (8, 11, 17, 21)" },
     { name: "Spring Boot 2, 3" },

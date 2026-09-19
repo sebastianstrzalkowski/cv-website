@@ -4,6 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationEN from './locales/en/translation.json';
 import translationPL from './locales/pl/translation.json';
+import { calculateYearsOfExperience } from './data/developerData';
 
 const resources = {
   en: {
@@ -27,7 +28,10 @@ i18n
     lookupCookie: 'i18next',
   },
   interpolation: {
-    escapeValue: false
+    escapeValue: false,
+    defaultVariables: {
+      years: calculateYearsOfExperience(7, 2018)
+    }
   }
 });
 
