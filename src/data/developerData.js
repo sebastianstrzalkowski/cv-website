@@ -50,10 +50,24 @@ const formatPeriod = (startDate, endDate) => {
   }
 };
 
+export const calculateYearsOfExperience = (startMonth = 7, startYear = 2018) => {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth() + 1; // 1-12
+  let years = currentYear - startYear;
+  if (currentMonth < startMonth) {
+    years -= 1;
+  }
+  return years;
+};
+
 const developerData = {
   name: "Sebastian Strzałkowski",
   firstName: "Sebastian",
   title: "Software Developer",
+  get yearsOfExperience() {
+    return calculateYearsOfExperience(7, 2018);
+  },
   skills: [
     { name: "Java (8, 11, 17, 21)" },
     { name: "Spring Boot 2, 3" },
@@ -63,6 +77,7 @@ const developerData = {
     { name: "Terraform" },
     { name: "Solidity" },
     { name: "Ethereum" },
+    { name: "Hyperledger" },
     { name: "Base" },
     { name: "Polygon" },
     { name: "Docker" },
@@ -119,10 +134,17 @@ const developerData = {
   ],
   experience: [
     {
+      position: "DLT Expert",
+      company: "GFT",
+      get period() {
+        return formatPeriod("08.2026", "obecnie");
+      }
+    },
+    {
       position: "DLT Engineer",
       company: "ASTEK",
       get period() {
-        return formatPeriod("08.2025", "obecnie");
+        return formatPeriod("08.2025", "08.2026");
       }
     },
     {
@@ -180,6 +202,7 @@ const developerData = {
   additionalTech: [
     "Claude Sonnet",
     "Copilot",
+    "Kaleido",
     "Tatum",
     "Fireblocks",
     "IntelliJ"
@@ -346,7 +369,8 @@ const developerData = {
     const lang = i18next.language;
     const translations = {
       pl: {
-        "ASTEK": "Projektowanie i tworzenie rozwiązań bankowych na blockchainie.",
+        "GFT": "Praca dla wiodącego banku będącego pionierem w dziedzinie technologii blockchain i tokenizacji aktywów. Projektowanie i rozwój rozwiązań w oparciu o stack Hyperledger oraz platformę BaaS Kaleido. Opracowywanie rozwiązań i prospektów technicznych dla potencjalnych klientów oraz prowadzenie rekrutacji technicznych w obszarze DLT.",
+        "ASTEK": "Rozwój i implementacja rozwiązań bankowych klasy enterprise opartych na technologii rozproszonych rejestrów (DLT) i blockchain. Projektowanie architektury do tokenizacji cyfrowych aktywów, integracja z wewnętrznymi systemami bankowymi oraz wsparcie koncepcyjne i technologiczne. Prowadzenie technicznych rozmów rekrutacyjnych oraz rozwój kompetencji inżynierskich w obszarze DLT.",
         "Inetum - Telco": "Praca z PostgreSQL/PostGIS oraz projekt migracji bazy danych z Sybase do PostgreSQL. Odpowiedzialność za utrzymanie i nowe funkcjonalności.",
         "Inetum - IoT": "Praca przy aplikacji IoT do monitorowania pojazdów. Odpowiedzialność za utrzymanie i nowe funkcjonalności w mikroserwisie udostępniającym API.",
         "Inetum - Cloud": "Praca nad aplikacją do przetwarzania danych w chmurze, zbudowaną z wykorzystaniem Flink i AWS z użyciem Project Reactor. Odpowiedzialność za infrastrukturę w początkowej fazie projektu oraz nowe funkcjonalności.",
@@ -354,7 +378,8 @@ const developerData = {
         "Bored Founders Club": "Mentor blockchain w grupie deweloperów. Prowadzenie regularnych warsztatów technicznych z zakresu Solidity, Web3 i integracji z łańcuchami bloków. Wsparcie w rozwoju projektów blockchain i smart kontraktów dla członków klubu."
       },
       en: {
-        "ASTEK": "Designing and creating banking solutions on blockchain.",
+        "GFT": "Working for a leading bank pioneering blockchain technology and asset tokenization. Designing and developing solutions based on the Hyperledger stack and Kaleido BaaS platform. Developing technical solutions and architecture proposals for prospective clients, along with conducting technical recruitment in the DLT domain.",
+        "ASTEK": "Development and implementation of enterprise banking solutions based on distributed ledger technology (DLT) and blockchain. Designing architecture for digital asset tokenization, integrating with internal banking systems, and providing technical advisory. Conducting technical recruitment interviews and expanding engineering capabilities in the DLT domain.",
         "Inetum - Telco": "Working with PostgreSQL/PostGIS and Sybase to PostgreSQL database migration project. Responsible for maintenance and new functionalities.",
         "Inetum - IoT": "Working on an IoT application for vehicle monitoring. Responsible for maintenance and new functionalities in a microservice providing API.",
         "Inetum - Cloud": "Working on a cloud-based data processing application built with Flink and AWS using Project Reactor. Responsible for infrastructure in the initial phase of the project and new functionalities.",

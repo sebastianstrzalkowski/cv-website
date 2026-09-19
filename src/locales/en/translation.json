@@ -95,7 +95,7 @@
     "rights": "All rights reserved."
   },
   "developerData": {
-    "about": "Software Developer with 7 years of experience in Java enterprise applications and blockchain solutions. Specialized in developing smart contracts on Ethereum, Base, and Polygon networks. Combining robust backend systems with innovative blockchain technologies to create secure, decentralized applications. Passionate about Web3, DeFi, and bridging traditional enterprise systems with blockchain infrastructure. Looking for projects that leverage both scalable Java solutions and cutting-edge blockchain implementations."
+    "about": "Software Developer with {{years}} years of experience in Java enterprise applications and blockchain solutions. Specialized in developing smart contracts on Ethereum, Base, and Polygon networks. Combining robust backend systems with innovative blockchain technologies to create secure, decentralized applications. Passionate about Web3, DeFi, and bridging traditional enterprise systems with blockchain infrastructure. Looking for projects that leverage both scalable Java solutions and cutting-edge blockchain implementations."
   },
   "jobTitle": {
     "softwareDeveloper": "Software Developer"

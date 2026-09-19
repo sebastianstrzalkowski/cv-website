@@ -22,7 +22,7 @@ const About = () => {
           </div>
 
           <div className="mb-16">
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto text-center">{t('developerData.about')}</p>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto text-center">{t('developerData.about', { years: developerData.yearsOfExperience })}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">

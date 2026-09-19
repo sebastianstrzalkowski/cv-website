@@ -24,7 +24,7 @@ const Hero = ({ scrollToSection }) => {
                 <span className="block mt-2 text-green-400">{developerData.firstName}</span>
               </h1>
               <p className="text-gray-300 text-lg mb-8 max-w-lg">
-                {t('developerData.about').split('.')[0] + '.'}
+                {t('developerData.about', { years: developerData.yearsOfExperience }).split('.')[0] + '.'}
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <button onClick={() => scrollToSection('experience')} className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full flex items-center transition-all transform hover:translate-y-[-2px]">
