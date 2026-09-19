@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Briefcase } from 'lucide-react';
+import { Layers, ShieldCheck, Cpu, Cloud } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
 import SkillTag from '../ui/SkillTag';
@@ -50,31 +50,31 @@ const About = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gray-700 p-4 rounded-lg text-center">
                     <div className="bg-green-900 bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Code size={24} className="text-green-400" />
+                      <Layers size={24} className="text-green-400" />
                     </div>
-                    <h4 className="font-semibold mb-1">{t('about.specialization.java')}</h4>
-                    <p className="text-sm text-gray-300">{t('about.specialization.javaDesc')}</p>
+                    <h4 className="font-semibold mb-1">{t('about.specialization.dlt')}</h4>
+                    <p className="text-sm text-gray-300">{t('about.specialization.dltDesc')}</p>
                   </div>
                   <div className="bg-gray-700 p-4 rounded-lg text-center">
                     <div className="bg-green-900 bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Code size={24} className="text-green-400" />
+                      <ShieldCheck size={24} className="text-green-400" />
                     </div>
-                    <h4 className="font-semibold mb-1">{t('about.specialization.blockchain')}</h4>
-                    <p className="text-sm text-gray-300">{t('about.specialization.blockchainDesc')}</p>
+                    <h4 className="font-semibold mb-1">{t('about.specialization.enterprise')}</h4>
+                    <p className="text-sm text-gray-300">{t('about.specialization.enterpriseDesc')}</p>
                   </div>
                   <div className="bg-gray-700 p-4 rounded-lg text-center">
                     <div className="bg-green-900 bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Briefcase size={24} className="text-green-400" />
+                      <Cpu size={24} className="text-green-400" />
+                    </div>
+                    <h4 className="font-semibold mb-1">{t('about.specialization.distributed')}</h4>
+                    <p className="text-sm text-gray-300">{t('about.specialization.distributedDesc')}</p>
+                  </div>
+                  <div className="bg-gray-700 p-4 rounded-lg text-center">
+                    <div className="bg-green-900 bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Cloud size={24} className="text-green-400" />
                     </div>
                     <h4 className="font-semibold mb-1">{t('about.specialization.cloud')}</h4>
                     <p className="text-sm text-gray-300">{t('about.specialization.cloudDesc')}</p>
-                  </div>
-                  <div className="bg-gray-700 p-4 rounded-lg text-center">
-                    <div className="bg-green-900 bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Code size={24} className="text-green-400" />
-                    </div>
-                    <h4 className="font-semibold mb-1">{t('about.specialization.databases')}</h4>
-                    <p className="text-sm text-gray-300">{t('about.specialization.databasesDesc')}</p>
                   </div>
                 </div>
               </div>

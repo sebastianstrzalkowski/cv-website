@@ -11,7 +11,7 @@
   },
   "hero": {
     "greeting": "Cześć, jestem",
-    "subtitle": "Java & Blockchain Developer",
+    "subtitle": "Senior DLT Engineer & Blockchain Architect",
     "experienceButton": "Zobacz doświadczenie",
     "projectsButton": "Projekty Poboczne",
     "scrollDown": "Przewiń w dół"
@@ -20,17 +20,17 @@
     "title": "O mnie",
     "subtitle": "Umiejętności & doświadczenie",
     "skills": "Umiejętności",
-    "additionalTech": "Dodatkowe technologie",
+    "additionalTech": "Dodatkowe technologie & Narzędzia",
     "specializations": "Specjalizacje",
     "specialization": {
-      "java": "Java Development",
-      "javaDesc": "Spring Boot, Microservices",
-      "blockchain": "Blockchain",
-      "blockchainDesc": "Solidity, Ethereum, Web3",
-      "cloud": "Cloud Infrastructure",
-      "cloudDesc": "AWS, Terraform, Docker",
-      "databases": "Bazy danych",
-      "databasesDesc": "PostgreSQL, Redis"
+      "dlt": "DLT & Smart Contracts",
+      "dltDesc": "EVM, Solidity, Casper, L2 Rollups",
+      "enterprise": "Enterprise Blockchain & Banking",
+      "enterpriseDesc": "Hyperledger, Kaleido, RWA, Tatum, Fireblocks",
+      "distributed": "Distributed Systems & AI",
+      "distributedDesc": "Architektura zdarzeniowa, Flink, AI-driven Dev",
+      "cloud": "Cloud & Node Infrastructure",
+      "cloudDesc": "AWS, Terraform, RPC Nodes, CI/CD"
     },
     "education": "Edukacja"
   },
@@ -46,14 +46,14 @@
   "media": {
     "title": "Media",
     "subtitle": "Dzielę się wiedzą",
-    "description": "Sprawdź moje filmy, w których dzielę się wiedzą i poradnikami na tematy takie jak Java, Blockchain, Infrastruktura Chmurowa i inne.",
+    "description": "Sprawdź materiały wideo, w których analizuję architekturę Web3, ewolucję protokołów blockchain, mechanizmy konsensusu oraz integrację technologii DLT w środowisku enterprise.",
     "watchVideo": "Obejrzyj Film",
     "viewAllVideos": "Zobacz Wszystkie Filmy"
   },
   "conferences": {
     "title": "Wystąpienia",
     "subtitle": "Konferencje & Wydarzenia",
-    "description": "Regularnie występuję na konferencjach i wydarzeniach technologicznych na tematy związane z Javą, technologią blockchain i infrastrukturą chmurową.",
+    "description": "Regularnie występuję na konferencjach technologicznych i debatach rynkowych, omawiając skalowalność Ethereum, warstwy L2, bezpieczeństwo smart kontraktów oraz synergię enterprise DLT z nowoczesnym backendem.",
     "viewEvent": "Szczegóły wydarzenia"
   },
   "contact": {
@@ -95,9 +95,9 @@
     "rights": "Wszelkie prawa zastrzeżone."
   },
   "developerData": {
-    "about": "Software Developer z {{years}}-letnim doświadczeniem w aplikacjach Java oraz rozwiązaniach blockchain. Specjalizuję się w tworzeniu inteligentnych kontraktów na sieciach Ethereum, Base i Polygon. Łączę solidne systemy backendowe z innowacyjnymi technologiami blockchain, tworząc bezpieczne, zdecentralizowane aplikacje. Pasjonuję się Web3, DeFi oraz integracją tradycyjnych systemów korporacyjnych z infrastrukturą blockchain. Poszukuję projektów wykorzystujących zarówno skalowalne rozwiązania Java, jak i zaawansowane implementacje technologii blockchain."
+    "about": "Inżynier DLT i Architekt Rozwiązań Blockchain z {{years}}-letnim doświadczeniem, specjalizujący się w projektowaniu bezpiecznych protokołów on-chain, architekturze smart kontraktów (EVM / Solidity / Casper / Hyperledger) oraz rozwiązaniach dla sektora bankowego i zdecentralizowanych finansów (DeFi). Łączę zaawansowaną wiedzę domenową Web3 (mechanizmy konsensusu, skalowalność L2, tokenizacja RWA, integracje powiernicze Tatum/Fireblocks) z rygorem inżynierii systemów rozproszonych oraz efektywnym wykorzystaniem narzędzi AI (LLM-driven development) w procesie wytwarzania oprogramowania. Aktywny prelegent konferencyjny, mentor i edukator ekosystemu Ethereum."
   },
   "jobTitle": {
-    "softwareDeveloper": "Software Developer"
+    "softwareDeveloper": "Senior DLT Engineer & Blockchain Architect"
   }
 }
