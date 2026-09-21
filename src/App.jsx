@@ -11,9 +11,10 @@ import {
   Projects, 
   Media, 
   Conferences, 
-  Trainings,
+  Trainings, 
   Contact 
 } from './components';
+import { NetworkBackground, ScrollProgressBar, BackToTop } from './components/ui';
 
 const App = () => {
   const {
@@ -25,15 +26,25 @@ const App = () => {
   } = useScrollSection();
 
   return (
-      <LanguageProvider>
-        <div className="relative overflow-x-hidden">
-          <Navbar
-              activeSection={activeSection}
-              scrolled={scrolled}
-              isMenuOpen={isMenuOpen}
-              setIsMenuOpen={setIsMenuOpen}
-              scrollToSection={scrollToSection}
-          />
+    <LanguageProvider>
+      <div className="relative min-h-screen bg-[#060913] text-gray-100 selection:bg-emerald-500/30 selection:text-emerald-300">
+        {/* Top Scroll Progress Indicator */}
+        <ScrollProgressBar />
+
+        {/* Interactive Neural/Blockchain Network Canvas */}
+        <NetworkBackground />
+
+        {/* Floating Navbar */}
+        <Navbar
+          activeSection={activeSection}
+          scrolled={scrolled}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+          scrollToSection={scrollToSection}
+        />
+
+        {/* Main Content Sections */}
+        <main className="relative z-10">
           <Hero scrollToSection={scrollToSection} />
           <About />
           <Experience />
@@ -42,9 +53,14 @@ const App = () => {
           <Conferences />
           <Trainings />
           <Contact />
-          <Footer />
-        </div>
-      </LanguageProvider>
+        </main>
+
+        <Footer />
+
+        {/* Floating Back to Top button */}
+        <BackToTop />
+      </div>
+    </LanguageProvider>
   );
 };
 
