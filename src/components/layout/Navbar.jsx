@@ -8,8 +8,8 @@ import LanguageSwitcher from '../ui/LanguageSwitcher';
 const navItems = [
   { id: 'home', key: 'nav.home' },
   { id: 'about', key: 'nav.about' },
-  { id: 'projects', key: 'nav.projects' },
   { id: 'experience', key: 'nav.experience' },
+  { id: 'projects', key: 'nav.projects' },
   { id: 'media', key: 'nav.media' },
   { id: 'conferences', key: 'nav.conferences' },
   { id: 'trainings', key: 'nav.trainings' },
