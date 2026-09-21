@@ -1,10 +1,9 @@
 import React from 'react';
-import { Linkedin, ArrowRight, MessageCircle, Send } from 'lucide-react';
+import { Linkedin, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
 import SpotlightCard from '../ui/SpotlightCard';
 import RevealOnScroll from '../ui/RevealOnScroll';
-import { motion } from 'framer-motion';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -12,28 +11,39 @@ const Contact = () => {
   const contactOptions = [
     {
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 240 240" fill="currentColor" className="text-emerald-400 group-hover:text-white transition-colors">
-          <path d="M98 175c-3.888 0-3.227-1.468-4.568-5.17L82 132.206 170 80c4.156-2.518-1.574 1.543-1.574 1.543L70 142l-29.288-9.088c-6.398-1.998-6.353-6.276 1.325-9.317L195 56c7.096-3.033 13.91 1.761 11.516 12.35L178 171c-1.84 8.718-9.845 7.632-13.885 5.23l-37.115-28.23-18.062 17.58c-2.062 2.067-3.804 3.82-7.938 3.82z" />
+        <svg
+          className="w-9 h-9 text-emerald-400 group-hover:text-white transition-colors -translate-x-0.5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l-.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z" />
         </svg>
       ),
       title: "Telegram",
       value: developerData.contact.telegram,
       link: `https://t.me/${developerData.contact.telegram.replace('@', '')}`,
-      gradient: "from-blue-500/20 to-cyan-500/20",
     },
     {
-      icon: <MessageCircle size={36} className="text-emerald-400 group-hover:text-white transition-colors" />,
+      icon: (
+        <svg
+          className="w-9 h-9 text-emerald-400 group-hover:text-white transition-colors"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+        </svg>
+      ),
       title: "Discord",
       value: developerData.contact.discord,
       link: "https://discord.com/users/sebastianstrzalkowski",
-      gradient: "from-indigo-500/20 to-purple-500/20",
     },
     {
-      icon: <Linkedin size={36} className="text-emerald-400 group-hover:text-white transition-colors" />,
+      icon: (
+        <Linkedin size={34} className="text-emerald-400 group-hover:text-white transition-colors" />
+      ),
       title: "LinkedIn",
       value: "Sebastian Strzałkowski",
       link: `https://${developerData.contact.linkedin}`,
-      gradient: "from-emerald-500/20 to-teal-500/20",
     }
   ];
 
@@ -67,31 +77,38 @@ const Contact = () => {
                 href={option.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block"
+                className="group block h-full"
               >
                 <SpotlightCard
-                  className="h-full border-gray-800/80 bg-gray-900/60 p-8 flex flex-col items-center text-center transition-all duration-300"
+                  className="h-full border-gray-800/80 bg-gray-900/60 p-8 transition-all duration-300"
                   spotlightColor="rgba(16, 185, 129, 0.25)"
                 >
-                  {/* Glowing icon circle */}
-                  <div className="relative mb-6">
-                    <div className="absolute -inset-2 bg-emerald-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative w-20 h-20 rounded-2xl bg-gray-950 border border-gray-800 group-hover:border-emerald-500/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      {option.icon}
+                  <div className="w-full h-full flex flex-col items-center justify-between text-center">
+                    
+                    {/* Centered Glowing Icon Frame */}
+                    <div className="flex flex-col items-center w-full">
+                      <div className="relative mb-6 flex items-center justify-center">
+                        <div className="absolute -inset-2 bg-emerald-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="relative w-20 h-20 rounded-2xl bg-gray-950 border border-gray-800 group-hover:border-emerald-500/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          {option.icon}
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-bold mb-1 text-white group-hover:text-emerald-300 transition-colors">
+                        {option.title}
+                      </h3>
+
+                      <p className="text-sm text-gray-400 group-hover:text-gray-200 transition-colors mb-6 font-mono">
+                        {option.value}
+                      </p>
                     </div>
-                  </div>
 
-                  <h3 className="text-xl font-bold mb-1 text-white group-hover:text-emerald-300 transition-colors">
-                    {option.title}
-                  </h3>
+                    {/* Centered CTA Pill */}
+                    <div className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-4 py-2 rounded-full border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-200 mt-2">
+                      <span>{t('contact.form.send')}</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
+                    </div>
 
-                  <p className="text-sm text-gray-400 group-hover:text-gray-200 transition-colors mb-6 font-mono">
-                    {option.value}
-                  </p>
-
-                  <div className="mt-auto inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-4 py-2 rounded-full border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-200">
-                    <span>{t('contact.form.send')}</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
                   </div>
                 </SpotlightCard>
               </a>

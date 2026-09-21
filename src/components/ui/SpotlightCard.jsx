@@ -56,7 +56,7 @@ const SpotlightCard = ({
         }}
       />
       {/* Card Content */}
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 w-full h-full flex flex-col">{children}</div>
     </motion.div>
   );
 };
