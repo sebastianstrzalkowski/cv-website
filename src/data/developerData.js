@@ -437,11 +437,7 @@ const developerData = {
           date: "11.10.2026",
           duration: "33 godziny",
           provider: "Devstyle",
-          instructors: "Łukasz Szydło, Jakub Kubryński, Jakub Pilimon",
           certificate: true,
-          certificateUrl: "/certificates/architekt-jutra-sebastian-strzalkowski.pdf",
-          certificateImage: "/images/certificates/architekt-jutra-certificate.png",
-          url: "https://architektjutra.pl/agenda/",
           skills: [
             "Architektura Enterprise z AI",
             "Model Context Protocol (MCP)",
@@ -518,11 +514,7 @@ const developerData = {
           date: "11.10.2026",
           duration: "33 hours",
           provider: "Devstyle",
-          instructors: "Łukasz Szydło, Jakub Kubryński, Jakub Pilimon",
           certificate: true,
-          certificateUrl: "/certificates/architekt-jutra-sebastian-strzalkowski.pdf",
-          certificateImage: "/images/certificates/architekt-jutra-certificate.png",
-          url: "https://architektjutra.pl/agenda/",
           skills: [
             "Enterprise AI Architecture",
             "Model Context Protocol (MCP)",

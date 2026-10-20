@@ -86,17 +86,10 @@
   "trainings": {
     "title": "Szkolenia",
     "subtitle": "Ciągły rozwój zawodowy",
-    "description": "Regularnie uczestniczę w zaawansowanych szkoleniach i programach certyfikacyjnych, pogłębiając wiedzę z zakresu architektury systemów, AI i inżynierii oprogramowania.",
+    "description": "Regularnie uczestniczę w szkoleniach i kursach, aby być na bieżąco z najnowszymi technologiami i najlepszymi praktykami.",
     "provider": "Organizator",
-    "instructors": "Prowadzący",
     "showMore": "Rozwiń",
-    "showLess": "Zwiń",
-    "viewCertificate": "Zobacz certyfikat",
-    "downloadPdf": "Otwórz / Pobierz PDF",
-    "courseAgenda": "Program kursu",
-    "certificateBadge": "Certyfikat",
-    "certificatePreview": "Certyfikat ukończenia",
-    "closeModal": "Zamknij"
+    "showLess": "Zwiń"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone."
