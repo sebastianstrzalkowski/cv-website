@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BookOpen, Calendar, Award, Clock, ChevronDown, ChevronUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
 import SpotlightCard from '../ui/SpotlightCard';
@@ -18,7 +17,7 @@ const Trainings = () => {
   };
 
   const isLongDescription = (description) => {
-    return description.length > 140;
+    return description && description.length > 140;
   };
 
   const trainings = developerData.trainings || [];
@@ -84,6 +83,7 @@ const Trainings = () => {
                         </p>
                         {isLongDescription(training.description) && (
                           <button
+                            type="button"
                             onClick={() => toggleExpanded(index)}
                             className="text-emerald-400 hover:text-emerald-300 text-xs font-semibold mt-2.5 flex items-center gap-1 transition-colors cursor-pointer"
                           >
