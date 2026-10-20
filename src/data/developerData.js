@@ -432,6 +432,30 @@ const developerData = {
     if (lang === 'pl') {
       return [
         {
+          name: "Architekt Jutra",
+          description: "Zaawansowany program architektoniczny (33h) dedykowany projektowaniu i wdrażaniu systemów klasy enterprise z komponentami AI na poziomie produkcyjnym. Szkolenie obejmuje wzorce modularne, pluginowe i heksagonalne pod kątem integracji z modelami LLM, budowę bezpiecznych i audytowalnych warstw dostępu (LLM Gateway, Model Context Protocol - MCP), architektury baz wiedzy (RAG, ontologie), Spec-Driven Development, wspierane przez AI przeglądy architektoniczne (Architectural Reviews) oraz optymalizację cyklu SDLC, obserwowalność i zarządzanie kosztami.",
+          date: "11.10.2026",
+          duration: "33 godziny",
+          provider: "Devstyle",
+          instructors: "Łukasz Szydło, Jakub Kubryński, Jakub Pilimon",
+          certificate: true,
+          certificateUrl: "/certificates/architekt-jutra-sebastian-strzalkowski.pdf",
+          certificateImage: "/images/certificates/architekt-jutra-certificate.png",
+          url: "https://architektjutra.pl/agenda/",
+          skills: [
+            "Architektura Enterprise z AI",
+            "Model Context Protocol (MCP)",
+            "LLM Gateway & Security",
+            "RAG & Bazy Wiedzy",
+            "Architektura Heksagonalna",
+            "Spec-Driven Development",
+            "Architectural Reviews z AI",
+            "Observability & Cost Optimization",
+            "AI-Driven SDLC",
+            "AI Governance & Compliance"
+          ]
+        },
+        {
           name: "Developer Jutra",
           description: "Kompleksowy program transformacji kariery programistycznej w erze AI. Szkolenie łączy biznes, architekturę i efektywne wykorzystanie LLM-ów. Program obejmuje 10 intensywnych webinarów z Tomaszem Ducinem, warsztaty z Full-Stack developmentu, DevOps, Event Stormingu oraz praktyczne wykorzystanie AI w codziennej pracy.",
           date: "18.07.2025",
@@ -488,6 +512,30 @@ const developerData = {
       ];
     } else {
       return [
+        {
+          name: "Architekt Jutra (Architect of Tomorrow)",
+          description: "Advanced 33-hour enterprise software architecture program focused on production-grade AI integration. The curriculum covers modular, plugin-based, and hexagonal architecture patterns designed for LLM integration, secure and audited access layers (LLM Gateway, Model Context Protocol - MCP), knowledge architectures based on RAG and ontologies, Spec-Driven Development, AI-assisted architectural reviews evaluating consistency, compliance, and cost efficiency, as well as SDLC optimization, observability, and cost controls.",
+          date: "11.10.2026",
+          duration: "33 hours",
+          provider: "Devstyle",
+          instructors: "Łukasz Szydło, Jakub Kubryński, Jakub Pilimon",
+          certificate: true,
+          certificateUrl: "/certificates/architekt-jutra-sebastian-strzalkowski.pdf",
+          certificateImage: "/images/certificates/architekt-jutra-certificate.png",
+          url: "https://architektjutra.pl/agenda/",
+          skills: [
+            "Enterprise AI Architecture",
+            "Model Context Protocol (MCP)",
+            "LLM Gateway & Security",
+            "RAG & Knowledge Architectures",
+            "Hexagonal Architecture",
+            "Spec-Driven Development",
+            "AI-Assisted Architectural Reviews",
+            "Observability & Cost Optimization",
+            "AI-Driven SDLC",
+            "AI Governance & Compliance"
+          ]
+        },
         {
           name: "Developer of Tomorrow",
           description: "Comprehensive career transformation program for programmers in the AI era. Training combines business, architecture, and effective use of LLMs. The program includes 10 intensive webinars with Tomasz Ducin, workshops on Full-Stack development, DevOps, Event Storming, and practical AI application in daily work.",

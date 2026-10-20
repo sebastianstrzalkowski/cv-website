@@ -86,10 +86,17 @@
   "trainings": {
     "title": "Trainings",
     "subtitle": "Continuous Professional Development",
-    "description": "I regularly participate in trainings and courses to stay up-to-date with the latest technologies and best practices.",
+    "description": "I regularly participate in advanced training programs and certifications, advancing my knowledge in system architecture, AI engineering, and software craftsmanship.",
     "provider": "Provider",
+    "instructors": "Instructors",
     "showMore": "Show more",
-    "showLess": "Show less"
+    "showLess": "Show less",
+    "viewCertificate": "View Certificate",
+    "downloadPdf": "Open / Download PDF",
+    "courseAgenda": "Course Agenda",
+    "certificateBadge": "Certificate",
+    "certificatePreview": "Certificate of Completion",
+    "closeModal": "Close"
   },
   "footer": {
     "rights": "All rights reserved."
