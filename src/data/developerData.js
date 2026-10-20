@@ -509,7 +509,7 @@ const developerData = {
     } else {
       return [
         {
-          name: "Architekt Jutra (Architect of Tomorrow)",
+          name: "Architect of Tomorrow",
           description: "Advanced 33-hour enterprise software architecture program focused on production-grade AI integration. The curriculum covers modular, plugin-based, and hexagonal architecture patterns designed for LLM integration, secure and audited access layers (LLM Gateway, Model Context Protocol - MCP), knowledge architectures based on RAG and ontologies, Spec-Driven Development, AI-assisted architectural reviews evaluating consistency, compliance, and cost efficiency, as well as SDLC optimization, observability, and cost controls.",
           date: "11.10.2026",
           duration: "33 hours",
