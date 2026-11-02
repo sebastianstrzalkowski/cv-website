@@ -65,6 +65,7 @@ const developerData = {
   name: "Sebastian Strzałkowski",
   firstName: "Sebastian",
   title: "Senior DLT Engineer & Blockchain Architect",
+  cvUrl: "/CV_Sebastian_Strzalkowski.pdf",
   get yearsOfExperience() {
     return calculateYearsOfExperience(7, 2018);
   },
