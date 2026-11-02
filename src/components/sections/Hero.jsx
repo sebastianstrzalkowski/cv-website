@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Code, Sparkles, Terminal, Shield, Layers, Cpu } from 'lucide-react';
+import { ArrowRight, Code, Download, Sparkles, Terminal, Shield, Layers, Cpu } from 'lucide-react';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
@@ -146,6 +146,22 @@ const Hero = ({ scrollToSection }) => {
                   <Code className="ml-2 text-emerald-400 group-hover:rotate-12 transition-transform duration-200" size={18} />
                 </span>
               </motion.button>
+
+              {/* Download CV Button */}
+              <motion.a
+                href={developerData.cvUrl}
+                download="Sebastian_Strzalkowski_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                className="relative group px-7 py-3.5 rounded-full bg-gray-900/80 text-gray-200 font-semibold border border-teal-500/40 hover:border-teal-400 hover:text-white backdrop-blur-md shadow-lg flex items-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_rgba(20,184,166,0.2)]"
+              >
+                <span className="relative z-10 flex items-center">
+                  {t('hero.downloadCvButton')}
+                  <Download className="ml-2 text-teal-400 group-hover:translate-y-0.5 transition-transform duration-200" size={18} />
+                </span>
+              </motion.a>
             </div>
           </motion.div>
 
