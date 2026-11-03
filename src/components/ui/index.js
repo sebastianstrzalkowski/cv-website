@@ -6,3 +6,5 @@ export { default as NetworkBackground } from './NetworkBackground';
 export { default as SpotlightCard } from './SpotlightCard';
 export { default as ScrollProgressBar } from './ScrollProgressBar';
 export { default as BackToTop } from './BackToTop';
+export { default as CvModal } from './CvModal';
+

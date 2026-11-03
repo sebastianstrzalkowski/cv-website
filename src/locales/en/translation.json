@@ -14,7 +14,10 @@
     "subtitle": "Senior DLT Engineer & Blockchain Architect",
     "experienceButton": "View Experience",
     "projectsButton": "Side Projects",
-    "downloadCvButton": "Download CV",
+    "downloadCvButton": "View / Print CV",
+    "printCvButton": "Print / Save as PDF",
+    "openNewTabButton": "Open in New Tab",
+    "cvModalSubtitle": "English Version • Ready for A4 Print / PDF Export",
     "scrollDown": "Scroll down"
   },
   "about": {
