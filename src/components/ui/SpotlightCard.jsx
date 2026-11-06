@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
+const canHover =
+  typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
+
 const SpotlightCard = ({
   children,
   className = '',
@@ -32,14 +35,13 @@ const SpotlightCard = ({
   return (
     <motion.div
       ref={divRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      whileHover={{ y: -4, transition: { duration: 0.2, ease: 'easeOut' } }}
-      className={`relative overflow-hidden rounded-2xl border border-gray-800/80 bg-gray-900/70 backdrop-blur-md shadow-xl transition-colors duration-300 ${className}`}
+      onMouseMove={canHover ? handleMouseMove : undefined}
+      onMouseEnter={canHover ? handleMouseEnter : undefined}
+      onMouseLeave={canHover ? handleMouseLeave : undefined}
+      whileHover={canHover ? { y: -4, transition: { duration: 0.2, ease: 'easeOut' } } : undefined}
+      className={`relative overflow-hidden rounded-2xl border border-gray-800/80 bg-gray-900/85 shadow-card transition-colors duration-300 ${className}`}
       {...props}
     >
-      {/* Spotlight highlight layer */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-0"
         style={{
@@ -47,7 +49,6 @@ const SpotlightCard = ({
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
         }}
       />
-      {/* Border glow layer */}
       <div
         className="pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-300 z-0"
         style={{
@@ -55,7 +56,6 @@ const SpotlightCard = ({
           boxShadow: `inset 0 0 0 1px ${borderColor}`,
         }}
       />
-      {/* Card Content */}
       <div className="relative z-10 w-full h-full flex flex-col">{children}</div>
     </motion.div>
   );

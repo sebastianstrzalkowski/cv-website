@@ -7,7 +7,11 @@
     "media": "Media",
     "conferences": "Conferences",
     "trainings": "Trainings",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Site navigation",
+    "language": "Language"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -18,7 +22,16 @@
     "printCvButton": "Print / Save as PDF",
     "openNewTabButton": "Open in New Tab",
     "cvModalSubtitle": "English Version • Ready for A4 Print / PDF Export",
-    "scrollDown": "Scroll down"
+    "scrollDown": "Scroll down",
+    "titles": [
+      "Senior DLT Engineer",
+      "Blockchain Architect",
+      "Java 17/21 & Spring Specialist",
+      "Smart Contract Security Enthusiast",
+      "Distributed Systems Builder"
+    ],
+    "cvModalClose": "Close CV preview",
+    "photoAlt": "Portrait of Sebastian Strzałkowski"
   },
   "about": {
     "title": "About me",
@@ -36,7 +49,14 @@
       "cloud": "Cloud & Node Infrastructure",
       "cloudDesc": "AWS, Terraform, RPC Nodes, CI/CD"
     },
-    "education": "Education"
+    "education": "Education",
+    "coreCompetencies": "{{count}} core competencies",
+    "stats": {
+      "years": "Years in engineering",
+      "projects": "Side projects",
+      "talks": "Talks & panels",
+      "certificates": "Certificates"
+    }
   },
   "experience": {
     "title": "Career",
@@ -85,7 +105,14 @@
       "sending": "Sending...",
       "success": "Message sent successfully!",
       "error": "Error sending message. Please try again."
-    }
+    },
+    "actions": {
+      "email": "Write an email",
+      "telegram": "Open Telegram",
+      "linkedin": "Open profile",
+      "github": "Open GitHub"
+    },
+    "otherChannels": "Also on"
   },
   "trainings": {
     "title": "Trainings",
@@ -93,7 +120,8 @@
     "description": "I regularly participate in trainings and courses to stay up-to-date with the latest technologies and best practices.",
     "provider": "Provider",
     "showMore": "Show more",
-    "showLess": "Show less"
+    "showLess": "Show less",
+    "certificate": "Certificate"
   },
   "footer": {
     "rights": "All rights reserved."

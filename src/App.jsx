@@ -1,18 +1,18 @@
-// src/App.jsx
 import React from 'react';
+import { MotionConfig } from 'framer-motion';
 import useScrollSection from './hooks/useScrollSection';
 import { LanguageProvider } from './context/LanguageContext';
-import { 
-  Navbar, 
+import {
+  Navbar,
   Footer,
-  Hero, 
-  About, 
-  Experience, 
-  Projects, 
-  Media, 
-  Conferences, 
-  Trainings, 
-  Contact 
+  Hero,
+  About,
+  Experience,
+  Projects,
+  Media,
+  Conferences,
+  Trainings,
+  Contact
 } from './components';
 import { NetworkBackground, ScrollProgressBar, BackToTop } from './components/ui';
 
@@ -27,39 +27,34 @@ const App = () => {
 
   return (
     <LanguageProvider>
-      <div className="relative min-h-screen bg-[#060913] text-gray-100 selection:bg-emerald-500/30 selection:text-emerald-300">
-        {/* Top Scroll Progress Indicator */}
-        <ScrollProgressBar />
+      <MotionConfig reducedMotion="user">
+        <div className="relative min-h-screen bg-brand-darker text-gray-100">
+          <ScrollProgressBar />
+          <NetworkBackground />
 
-        {/* Interactive Neural/Blockchain Network Canvas */}
-        <NetworkBackground />
+          <Navbar
+            activeSection={activeSection}
+            scrolled={scrolled}
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
+            scrollToSection={scrollToSection}
+          />
 
-        {/* Floating Navbar */}
-        <Navbar
-          activeSection={activeSection}
-          scrolled={scrolled}
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-          scrollToSection={scrollToSection}
-        />
+          <main className="relative z-10">
+            <Hero scrollToSection={scrollToSection} />
+            <About />
+            <Experience />
+            <Projects />
+            <Media />
+            <Conferences />
+            <Trainings />
+            <Contact />
+          </main>
 
-        {/* Main Content Sections */}
-        <main className="relative z-10">
-          <Hero scrollToSection={scrollToSection} />
-          <About />
-          <Experience />
-          <Projects />
-          <Media />
-          <Conferences />
-          <Trainings />
-          <Contact />
-        </main>
-
-        <Footer />
-
-        {/* Floating Back to Top button */}
-        <BackToTop />
-      </div>
+          <Footer />
+          <BackToTop />
+        </div>
+      </MotionConfig>
     </LanguageProvider>
   );
 };
