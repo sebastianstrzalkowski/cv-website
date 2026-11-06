@@ -11,8 +11,9 @@ const ScrollProgressBar = () => {
 
   return (
     <motion.div
+      aria-hidden="true"
       style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 origin-left z-50 shadow-[0_0_12px_rgba(16,185,129,0.7)]"
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-400 origin-left z-50"
     />
   );
 };

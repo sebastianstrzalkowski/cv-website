@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       colors: {
         brand: {
@@ -45,9 +45,8 @@ export default {
         }
       },
       boxShadow: {
-        'neon-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.4)',
-        'neon-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.4)',
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+        'card': '0 8px 24px -8px rgba(0, 0, 0, 0.6)',
+        'cta': '0 8px 20px -6px rgba(16, 185, 129, 0.45)',
       }
     },
   },

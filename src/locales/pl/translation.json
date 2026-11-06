@@ -7,7 +7,11 @@
     "media": "Media",
     "conferences": "Konferencje",
     "trainings": "Szkolenia",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "menu": "Nawigacja strony",
+    "language": "Język"
   },
   "hero": {
     "greeting": "Cześć, jestem",
@@ -18,7 +22,16 @@
     "printCvButton": "Drukuj / Zapisz jako PDF",
     "openNewTabButton": "Otwórz w nowej karcie",
     "cvModalSubtitle": "Wersja angielska • Gotowa do druku A4 / zapisu PDF",
-    "scrollDown": "Przewiń w dół"
+    "scrollDown": "Przewiń w dół",
+    "titles": [
+      "Senior DLT Engineer",
+      "Architekt Blockchain",
+      "Specjalista Java 17/21 & Spring",
+      "Pasjonat bezpieczeństwa smart kontraktów",
+      "Inżynier systemów rozproszonych"
+    ],
+    "cvModalClose": "Zamknij podgląd CV",
+    "photoAlt": "Portret Sebastiana Strzałkowskiego"
   },
   "about": {
     "title": "O mnie",
@@ -36,7 +49,14 @@
       "cloud": "Cloud & Node Infrastructure",
       "cloudDesc": "AWS, Terraform, RPC Nodes, CI/CD"
     },
-    "education": "Edukacja"
+    "education": "Edukacja",
+    "coreCompetencies": "{{count}} kluczowych kompetencji",
+    "stats": {
+      "years": "Lat w inżynierii",
+      "projects": "Projekty poboczne",
+      "talks": "Wystąpienia i panele",
+      "certificates": "Certyfikaty"
+    }
   },
   "experience": {
     "title": "Kariera",
@@ -85,7 +105,14 @@
       "sending": "Wysyłanie...",
       "success": "Wiadomość wysłana pomyślnie!",
       "error": "Błąd podczas wysyłania wiadomości. Spróbuj ponownie."
-    }
+    },
+    "actions": {
+      "email": "Napisz e-mail",
+      "telegram": "Otwórz Telegram",
+      "linkedin": "Otwórz profil",
+      "github": "Otwórz GitHub"
+    },
+    "otherChannels": "Znajdziesz mnie też na"
   },
   "trainings": {
     "title": "Szkolenia",
@@ -93,7 +120,8 @@
     "description": "Regularnie uczestniczę w szkoleniach i kursach, aby być na bieżąco z najnowszymi technologiami i najlepszymi praktykami.",
     "provider": "Organizator",
     "showMore": "Rozwiń",
-    "showLess": "Zwiń"
+    "showLess": "Zwiń",
+    "certificate": "Certyfikat"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone."
