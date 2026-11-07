@@ -131,5 +131,9 @@
   },
   "jobTitle": {
     "softwareDeveloper": "Senior DLT Engineer & Blockchain Architect"
+  },
+  "seo": {
+    "title": "Sebastian Strzałkowski | Senior DLT Engineer",
+    "description": "Senior DLT Engineer i architekt blockchain. Bankowe systemy DLT wdrożone produkcyjnie: tokenizowane depozyty, Hyperledger, Solidity/EVM, Java/Spring."
   }
 }

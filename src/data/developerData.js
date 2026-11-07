@@ -233,7 +233,7 @@ const developerData = {
           title: "Architektura aplikacji WEB3",
           description: "W tym materiale analizuję architekturę aplikacji web3 w oparciu o protokół opensea.io. Omawiam kluczowe komponenty, przepływy danych i interakcje pomiędzy smart kontraktami a warstwą frontend.",
           url: "https://www.youtube.com/watch?v=fJaq7KupCUU",
-          thumbnail: "/images/media/web3-architecture.png",
+          thumbnail: "/images/media/web3-architecture.webp",
           date: "2023-06-05"
         }
       ];
@@ -257,7 +257,7 @@ const developerData = {
           title: "WEB3 Application Architecture",
           description: "In this video, I analyze the architecture of web3 applications based on the opensea.io protocol. I discuss key components, data flows, and interactions between smart contracts and the frontend layer.",
           url: "https://www.youtube.com/watch?v=fJaq7KupCUU",
-          thumbnail: "/images/media/web3-architecture.png",
+          thumbnail: "/images/media/web3-architecture.webp",
           date: "2023-06-05"
         }
       ];
@@ -281,7 +281,8 @@ const developerData = {
           description: "Udział jako panelista w debacie organizowanej przez Cashify i Warsaw Enterprise Institute na temat przyszłości Ethereum (\"Ethereum w 2026: hit czy kit?\"). Merytoryczna dyskusja dotycząca skalowalności L2, potencjału „Lepszego Bitcoina” i fundamentów sieci.",
           date: "11.03.2026",
           location: "Warszawa, Polska",
-          image: "/images/conferences/cashify_debate.jpeg",
+          image: "/images/conferences/cashify_debate.webp",
+          imageSize: [800, 450],
           tags: ["Ethereum", "DeFi", "Web3", "Debata", "Smart Contracts"]
         },
         {
@@ -289,7 +290,8 @@ const developerData = {
           description: "Warsztat \"Smart kontrakty Ethereum\" na wewnętrznej konferencji firmy - Technologia blockchain i Ethereum, podstawy języka Solidity, interakcja Java-Ethereum przez Web3j, standardy tokenów Ethereum oraz wdrażanie kontraktów na testnet.",
           date: "26.03.2025",
           location: "Poznań, Polska",
-          image: "/images/conferences/jvmdays-poznan.png",
+          image: "/images/conferences/jvmdays-poznan.webp",
+          imageSize: [238, 92],
           tags: ["Java", "Ethereum", "Solidity", "Web3j", "Smart Contracts"]
         },
         {
@@ -297,7 +299,8 @@ const developerData = {
           description: "Prezentacja 'Who will dethronize Ethereum?', w której analizowałem blockchainy, które mogą przejąć część użytkowników i zastosowań od sieci Ethereum, wraz z porównaniem ich zalet i wad.",
           date: "02.06.2023",
           location: "Warszawa, Polska",
-          image: "/images/conferences/fiesta-bfc.png",
+          image: "/images/conferences/fiesta-bfc.webp",
+          imageSize: [862, 441],
           tags: ["Blockchain", "Ethereum", "Solana", "Porównanie Technologii"]
         },
         {
@@ -305,7 +308,8 @@ const developerData = {
           description: "Prezentacja na temat 'Web2, Web3 aspekty technologiczno biznesowe'. Porównanie tradycyjnych technologii webowych z nowymi rozwiązaniami bazującymi na blockchain, ze szczególnym uwzględnieniem aspektów biznesowych.",
           date: "03.09.2022",
           location: "Warszawa, Polska",
-          image: "/images/conferences/blockchain-alliance-opener.jpg",
+          image: "/images/conferences/blockchain-alliance-opener.webp",
+          imageSize: [600, 540],
           tags: ["Web3", "Blockchain", "Strategia Biznesowa", "Trendy Technologiczne"]
         },
         {
@@ -313,7 +317,8 @@ const developerData = {
           description: "Prezentacja analizująca architekturę aplikacji web3 w oparciu o protokół opensea.io. Omówienie kluczowych komponentów, przepływów danych i interakcji pomiędzy smart kontraktami a warstwą frontend.",
           date: "23.07.2022",
           location: "Kraków, Polska",
-          image: "/images/conferences/web3-devs-poland.png",
+          image: "/images/conferences/web3-devs-poland.webp",
+          imageSize: [600, 543],
           tags: ["Web3", "OpenSea", "Architektura aplikacji", "Smart Contracts"]
         }
       ];
@@ -324,7 +329,8 @@ const developerData = {
           description: "Participation as a panelist in a debate organized by Cashify and Warsaw Enterprise Institute on the future of Ethereum (\"Ethereum in 2026: Hit or Flop?\"). A substantive discussion covering L2 scalability, the potential of the \"Better Bitcoin\", and network fundamentals.",
           date: "11.03.2026",
           location: "Warsaw, Poland",
-          image: "/images/conferences/cashify_debate.jpeg",
+          image: "/images/conferences/cashify_debate.webp",
+          imageSize: [800, 450],
           tags: ["Ethereum", "DeFi", "Web3", "Debate", "Smart Contracts"]
         },
         {
@@ -332,7 +338,8 @@ const developerData = {
           description: "Workshop \"Ethereum Smart Contracts\" at the internal company conference - Blockchain and Ethereum technology, Solidity language basics, Java-Ethereum interaction through Web3j, Ethereum token standards, and deploying contracts to testnet.",
           date: "26.03.2025",
           location: "Poznań, Poland",
-          image: "/images/conferences/jvmdays-poznan.png",
+          image: "/images/conferences/jvmdays-poznan.webp",
+          imageSize: [238, 92],
           tags: ["Java", "Ethereum", "Solidity", "Web3j", "Smart Contracts"]
         },
         {
@@ -340,7 +347,8 @@ const developerData = {
           description: "Presentation titled 'Who will dethronize Ethereum?' analyzing blockchains that could take users and use cases away from the Ethereum network, with a comparison of their advantages and disadvantages.",
           date: "02.06.2023",
           location: "Warsaw, Poland",
-          image: "/images/conferences/fiesta-bfc.png",
+          image: "/images/conferences/fiesta-bfc.webp",
+          imageSize: [862, 441],
           tags: ["Blockchain", "Ethereum", "Solana", "Technology Comparison"]
         },
         {
@@ -348,7 +356,8 @@ const developerData = {
           description: "Presentation on 'Web2, Web3 technological and business aspects'. Comparison of traditional web technologies with new blockchain-based solutions, with a particular focus on business aspects.",
           date: "03.09.2022",
           location: "Warsaw, Poland",
-          image: "/images/conferences/blockchain-alliance-opener.png",
+          image: "/images/conferences/blockchain-alliance-opener.webp",
+          imageSize: [600, 540],
           tags: ["Web3", "Blockchain", "Business Strategy", "Technology Trends"]
         },
         {
@@ -356,7 +365,8 @@ const developerData = {
           description: "Presentation analyzing the architecture of web3 applications based on the opensea.io protocol. Discussion of key components, data flows, and interactions between smart contracts and the frontend layer.",
           date: "23.07.2022",
           location: "Kraków, Poland",
-          image: "/images/conferences/web3-devs-poland.png",
+          image: "/images/conferences/web3-devs-poland.webp",
+          imageSize: [600, 543],
           tags: ["Web3", "OpenSea", "Application Architecture", "Smart Contracts"]
         }
       ];

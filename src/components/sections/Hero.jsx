@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { ArrowRight, ArrowDown, Code, FileText, Terminal, Shield, Layers, Cpu } from 'lucide-react';
-import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, useReducedMotion } from 'framer-motion';
+import { m, AnimatePresence, useMotionValue, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
-import CvModal from '../ui/CvModal';
+// The CV modal (and the 30 KB CV markup inside it) loads only when someone asks for it.
+const CvModal = lazy(() => import('../ui/CvModal'));
+const preloadCvModal = () => import('../ui/CvModal');
 
 const floatingBadges = [
   { text: 'Solidity / EVM', icon: Shield, color: 'bg-emerald-950/80 text-emerald-200 border-emerald-500/30', top: '10%', left: '-8%', delay: 0 },
@@ -18,6 +20,12 @@ const Hero = ({ scrollToSection }) => {
   const reduceMotion = useReducedMotion();
   const [titleIndex, setTitleIndex] = useState(0);
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
+  const [cvModalMounted, setCvModalMounted] = useState(false);
+
+  const openCvModal = () => {
+    setCvModalMounted(true);
+    setIsCvModalOpen(true);
+  };
 
   useEffect(() => {
     if (reduceMotion || !Array.isArray(titles) || titles.length < 2) return undefined;
@@ -57,13 +65,13 @@ const Hero = ({ scrollToSection }) => {
       <div className="container mx-auto px-4 z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:w-7/12 text-center lg:text-left"
           >
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -74,7 +82,7 @@ const Hero = ({ scrollToSection }) => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span>{t('hero.subtitle')}</span>
-            </motion.div>
+            </m.div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4">
               <span className="block text-gray-400 text-2xl sm:text-3xl font-medium mb-1">
@@ -85,7 +93,7 @@ const Hero = ({ scrollToSection }) => {
 
             <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start mb-6 overflow-hidden" aria-live="polite">
               <AnimatePresence mode="wait">
-                <motion.div
+                <m.div
                   key={currentTitle}
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -94,7 +102,7 @@ const Hero = ({ scrollToSection }) => {
                   className="text-xl sm:text-2xl font-semibold text-emerald-400"
                 >
                   {currentTitle}
-                </motion.div>
+                </m.div>
               </AnimatePresence>
             </div>
 
@@ -103,42 +111,44 @@ const Hero = ({ scrollToSection }) => {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <motion.button
-                type="button"
+              <m.a
+                href="#experience"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => scrollToSection('experience')}
+                onClick={(event) => { event.preventDefault(); scrollToSection('experience'); }}
                 className="group min-h-12 bg-emerald-400 hover:bg-emerald-300 text-gray-950 font-semibold px-7 py-3 rounded-full shadow-cta flex items-center transition-colors duration-200"
               >
                 {t('hero.experienceButton')}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-200" size={18} aria-hidden="true" />
-              </motion.button>
+              </m.a>
 
-              <motion.button
-                type="button"
+              <m.a
+                href="#projects"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => scrollToSection('projects')}
+                onClick={(event) => { event.preventDefault(); scrollToSection('projects'); }}
                 className="group min-h-12 px-7 py-3 rounded-full bg-gray-900/80 text-gray-200 font-semibold border border-emerald-500/40 hover:border-emerald-400 hover:text-white flex items-center transition-colors duration-200"
               >
                 {t('hero.projectsButton')}
                 <Code className="ml-2 text-emerald-400" size={18} aria-hidden="true" />
-              </motion.button>
+              </m.a>
 
-              <motion.button
+              <m.button
                 type="button"
-                onClick={() => setIsCvModalOpen(true)}
+                onClick={openCvModal}
+                onMouseEnter={preloadCvModal}
+                onFocus={preloadCvModal}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="group min-h-12 px-7 py-3 rounded-full bg-gray-900/80 text-gray-200 font-semibold border border-teal-500/40 hover:border-teal-400 hover:text-white flex items-center transition-colors duration-200"
               >
                 {t('hero.downloadCvButton')}
                 <FileText className="ml-2 text-teal-400" size={18} aria-hidden="true" />
-              </motion.button>
+              </m.button>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -147,7 +157,7 @@ const Hero = ({ scrollToSection }) => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            <motion.div
+            <m.div
               style={{ rotateX: rotateXSpring, rotateY: rotateYSpring, transformStyle: 'preserve-3d' }}
               className="relative p-2"
             >
@@ -172,7 +182,7 @@ const Hero = ({ scrollToSection }) => {
               {floatingBadges.map((badge, idx) => {
                 const Icon = badge.icon;
                 return (
-                  <motion.div
+                  <m.div
                     key={badge.text}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: reduceMotion ? 0 : [0, -10, 0] }}
@@ -185,16 +195,16 @@ const Hero = ({ scrollToSection }) => {
                   >
                     <Icon size={14} aria-hidden="true" />
                     <span>{badge.text}</span>
-                  </motion.div>
+                  </m.div>
                 );
               })}
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
         </div>
       </div>
 
-      <motion.button
+      <m.button
         type="button"
         onClick={() => scrollToSection('about')}
         animate={reduceMotion ? undefined : { y: [0, 8, 0] }}
@@ -205,9 +215,13 @@ const Hero = ({ scrollToSection }) => {
           {t('hero.scrollDown')}
         </span>
         <ArrowDown className="text-emerald-400" size={18} aria-hidden="true" />
-      </motion.button>
+      </m.button>
 
-      <CvModal isOpen={isCvModalOpen} onClose={() => setIsCvModalOpen(false)} />
+      {cvModalMounted && (
+        <Suspense fallback={null}>
+          <CvModal isOpen={isCvModalOpen} onClose={() => setIsCvModalOpen(false)} />
+        </Suspense>
+      )}
     </section>
   );
 };

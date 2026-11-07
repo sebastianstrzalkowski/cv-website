@@ -63,6 +63,16 @@ const useScrollSection = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Check initial position
 
+    // Deep link: /#experience lands on the section once React has rendered it.
+    const hash = window.location.hash.slice(1);
+    if (hash && sectionOrder.includes(hash)) {
+      const target = document.getElementById(hash);
+      if (target) {
+        target.scrollIntoView();
+        setActiveSection(hash);
+      }
+    }
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (clickTimeout.current) clearTimeout(clickTimeout.current);
@@ -83,6 +93,10 @@ const useScrollSection = () => {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Keep the URL shareable without adding history entries on every click.
+    const nextUrl = id === 'home' ? window.location.pathname + window.location.search : `#${id}`;
+    window.history.replaceState(null, '', nextUrl);
   };
 
   return {

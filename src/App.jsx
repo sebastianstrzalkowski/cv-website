@@ -1,5 +1,5 @@
 import React from 'react';
-import { MotionConfig } from 'framer-motion';
+import { LazyMotion, MotionConfig } from 'framer-motion';
 import useScrollSection from './hooks/useScrollSection';
 import { LanguageProvider } from './context/LanguageContext';
 import {
@@ -16,6 +16,9 @@ import {
 } from './components';
 import { NetworkBackground, ScrollProgressBar, BackToTop } from './components/ui';
 
+// Animation features load as a separate chunk; the main bundle ships only the `m` runtime.
+const loadMotionFeatures = () => import('./motionFeatures').then((mod) => mod.default);
+
 const App = () => {
   const {
     activeSection,
@@ -27,7 +30,8 @@ const App = () => {
 
   return (
     <LanguageProvider>
-      <MotionConfig reducedMotion="user">
+      <LazyMotion features={loadMotionFeatures} strict>
+        <MotionConfig reducedMotion="user">
         <div className="relative min-h-screen bg-brand-darker text-gray-100">
           <ScrollProgressBar />
           <NetworkBackground />
@@ -54,7 +58,8 @@ const App = () => {
           <Footer />
           <BackToTop />
         </div>
-      </MotionConfig>
+        </MotionConfig>
+      </LazyMotion>
     </LanguageProvider>
   );
 };
