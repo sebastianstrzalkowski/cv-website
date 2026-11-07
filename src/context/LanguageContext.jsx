@@ -5,6 +5,11 @@ const LanguageContext = createContext();
 
 const SUPPORTED = ['en', 'pl'];
 
+const setMeta = (selector, content) => {
+  const el = document.head.querySelector(selector);
+  if (el && content) el.setAttribute('content', content);
+};
+
 export const LanguageProvider = ({ children }) => {
   const { i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'en');
@@ -19,6 +24,13 @@ export const LanguageProvider = ({ children }) => {
     const handleLanguageChange = (lng) => {
       setCurrentLanguage(lng);
       document.documentElement.lang = lng;
+
+      // Keep the document title and description in the visitor's language.
+      // Open Graph tags stay static (scrapers do not run JS).
+      const title = i18n.t('seo.title');
+      const description = i18n.t('seo.description');
+      if (title) document.title = title;
+      setMeta('meta[name="description"]', description);
     };
 
     handleLanguageChange(i18n.language);

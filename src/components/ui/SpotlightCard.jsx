@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 const canHover =
   typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
@@ -33,7 +33,7 @@ const SpotlightCard = ({
   };
 
   return (
-    <motion.div
+    <m.div
       ref={divRef}
       onMouseMove={canHover ? handleMouseMove : undefined}
       onMouseEnter={canHover ? handleMouseEnter : undefined}
@@ -57,7 +57,7 @@ const SpotlightCard = ({
         }}
       />
       <div className="relative z-10 w-full h-full flex flex-col">{children}</div>
-    </motion.div>
+    </m.div>
   );
 };
 

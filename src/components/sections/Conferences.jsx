@@ -29,6 +29,8 @@ const Conferences = () => {
                           <img
                             src={conference.image}
                             alt={conference.name}
+                            width={conference.imageSize?.[0]}
+                            height={conference.imageSize?.[1]}
                             loading="lazy"
                             decoding="async"
                             className="object-contain w-auto max-h-full"

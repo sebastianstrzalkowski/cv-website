@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { m, useInView, useAnimation } from 'framer-motion';
 
 const RevealOnScroll = ({
   children,
@@ -36,7 +36,7 @@ const RevealOnScroll = ({
 
   return (
     <div ref={ref} className={`relative overflow-visible ${className}`} style={{ width }}>
-      <motion.div
+      <m.div
         variants={{
           hidden: { opacity: 0, x: offset.x, y: offset.y },
           visible: { 
@@ -54,7 +54,7 @@ const RevealOnScroll = ({
         animate={controls}
       >
         {children}
-      </motion.div>
+      </m.div>
     </div>
   );
 };

@@ -36,6 +36,8 @@ Secondary, confirmed supporting claims: active conference speaker and Web3 mento
 
 ## Capabilities and Constraints
 
+- Live at https://sebastian.i-can-do.it (CloudFront behind Cloudflare). The canonical URL, Open Graph tags and sitemap are generated from VITE_SITE_URL in vite.config.js.
+
 Confirmed functionality:
 
 - Sections: Hero, About (skills, specializations, additional tools, education), Experience, Projects, Media (YouTube talks), Conferences, Trainings (with certificates), Contact, Footer.

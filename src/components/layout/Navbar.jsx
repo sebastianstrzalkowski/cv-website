@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
@@ -17,12 +17,18 @@ const navItems = [
   { id: 'contact', key: 'nav.contact' },
 ];
 
+// Real anchors keep the sections crawlable and deep-linkable; JS only adds smooth scroll.
 const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSection }) => {
   const { t } = useTranslation();
   const menuRef = useRef(null);
   const closeMenu = () => setIsMenuOpen(false);
 
   useFocusTrap(menuRef, isMenuOpen, closeMenu);
+
+  const go = (id) => (event) => {
+    event.preventDefault();
+    scrollToSection(id);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 flex justify-center px-4 py-4 pointer-events-none">
@@ -34,9 +40,9 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
             : 'w-full max-w-7xl rounded-full bg-gray-900/40 backdrop-blur-md border border-white/5 px-6 py-2.5'
         }`}
       >
-        <motion.button
-          type="button"
-          onClick={() => scrollToSection('home')}
+        <m.a
+          href="#home"
+          onClick={go('home')}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="text-lg md:text-xl font-bold flex items-center group min-h-10 rounded-full px-1"
@@ -53,31 +59,31 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
           <span className="text-emerald-400 group-hover:text-emerald-300 transition-colors ml-1 font-mono font-semibold" aria-hidden="true">
             {'/>'}
           </span>
-        </motion.button>
+        </m.a>
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center space-x-1 relative">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
-              <button
+              <a
                 key={item.id}
-                type="button"
-                onClick={() => scrollToSection(item.id)}
+                href={`#${item.id}`}
+                onClick={go(item.id)}
                 aria-current={isActive ? 'true' : undefined}
-                className={`relative min-h-10 px-3.5 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 ${
+                className={`relative inline-flex items-center min-h-10 px-3.5 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 ${
                   isActive ? 'text-white' : 'text-gray-300 hover:text-white'
                 }`}
               >
                 {isActive && (
-                  <motion.div
+                  <m.div
                     layoutId="activeNavPill"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     className="absolute inset-0 rounded-full bg-emerald-500/20 border border-emerald-400/50 -z-10"
                   />
                 )}
                 {t(item.key)}
-              </button>
+              </a>
             );
           })}
           <div className="pl-2 border-l border-gray-700/60">
@@ -88,17 +94,17 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
         {/* Tablet */}
         <div className="hidden md:flex lg:hidden items-center space-x-1">
           {navItems.slice(0, 4).map((item) => (
-            <button
+            <a
               key={item.id}
-              type="button"
-              onClick={() => scrollToSection(item.id)}
+              href={`#${item.id}`}
+              onClick={go(item.id)}
               aria-current={activeSection === item.id ? 'true' : undefined}
-              className={`min-h-9 px-2.5 text-xs rounded-full transition-colors ${
+              className={`inline-flex items-center min-h-9 px-2.5 text-xs rounded-full transition-colors ${
                 activeSection === item.id ? 'bg-emerald-500/20 text-emerald-300 font-semibold' : 'text-gray-300 hover:text-white'
               }`}
             >
               {t(item.key)}
-            </button>
+            </a>
           ))}
           <LanguageSwitcher small />
           <button
@@ -116,7 +122,7 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
         {/* Mobile */}
         <div className="md:hidden flex items-center space-x-2">
           <LanguageSwitcher small />
-          <motion.button
+          <m.button
             type="button"
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -126,13 +132,13 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
             aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
-          </motion.button>
+          </m.button>
         </div>
       </nav>
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
+          <m.div
             ref={menuRef}
             id="mobile-menu"
             role="dialog"
@@ -151,7 +157,7 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
                 Sebastian S.
                 <span className="text-emerald-400" aria-hidden="true">{'/>'}</span>
               </div>
-              <motion.button
+              <m.button
                 type="button"
                 whileTap={{ scale: 0.9 }}
                 onClick={closeMenu}
@@ -159,10 +165,10 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
                 className="w-11 h-11 inline-flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 text-white"
               >
                 <X size={22} aria-hidden="true" />
-              </motion.button>
+              </m.button>
             </div>
 
-            <motion.div
+            <m.div
               initial="closed"
               animate="open"
               exit="closed"
@@ -175,31 +181,32 @@ const Navbar = ({ activeSection, scrolled, isMenuOpen, setIsMenuOpen, scrollToSe
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
-                  <motion.button
+                  <m.a
                     key={item.id}
-                    type="button"
+                    href={`#${item.id}`}
                     variants={{
                       open: { opacity: 1, y: 0 },
                       closed: { opacity: 0, y: 20 },
                     }}
                     whileTap={{ scale: 0.96 }}
                     aria-current={isActive ? 'true' : undefined}
-                    onClick={() => {
+                    onClick={(event) => {
+                      event.preventDefault();
                       scrollToSection(item.id);
                       closeMenu();
                     }}
-                    className={`text-left text-xl font-semibold px-4 py-3 rounded-xl transition-colors ${
+                    className={`block text-left text-xl font-semibold px-4 py-3 rounded-xl transition-colors ${
                       isActive
                         ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                         : 'text-gray-200 hover:bg-gray-800/60'
                     }`}
                   >
                     {t(item.key)}
-                  </motion.button>
+                  </m.a>
                 );
               })}
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>

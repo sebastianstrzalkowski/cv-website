@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
 const BackToTop = () => {
@@ -32,7 +32,7 @@ const BackToTop = () => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
+        <m.button
           type="button"
           onClick={scrollToTop}
           initial={{ opacity: 0, scale: 0.6, y: 20 }}
@@ -59,7 +59,7 @@ const BackToTop = () => {
             />
           </svg>
           <ArrowUp size={20} className="relative z-10 group-hover:-translate-y-0.5 transition-transform duration-200" aria-hidden="true" />
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   );
