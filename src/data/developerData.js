@@ -89,6 +89,14 @@ const developerData = {
   ],
   projects: [
     {
+      title: "MaluchTracker",
+      url: "https://maluchtracker.pl",
+      role: "Founder & Developer",
+      get period() {
+        return formatPeriod("05.2026", "obecnie");
+      }
+    },
+    {
       title: "Liqfinity",
       url: "https://liqfinity.com",
       role: "CTO",
@@ -408,6 +416,7 @@ const developerData = {
     const lang = i18next.language;
     const translations = {
       pl: {
+        "MaluchTracker": "Aplikacja mobilna dla rodziców niemowląt, opublikowana w Google Play (PL/EN/UA): karmienia, sen, pieluszki, dieta, siatki centylowe WHO, skoki rozwojowe i prognozy karmień. Projekt i rozwój od zera w pojedynkę: Clean Architecture (porty i adaptery) pilnowana automatycznymi testami architektury, dane tylko na telefonie, bez konta i reklam, wydania przez EAS i GitHub Actions oraz praca z agentami AI.",
         "Liqfinity": "Protokół zdecentralizowanych finansów (DeFi). Projektowanie architektury systemów non-custodial, integracja pul płynności, zarządzanie ryzykiem on-chain, infrastruktura chmurowa AWS z automatyzacją Terraform oraz leadership techniczny zespołu.",
         "Bored Founders Club": "Mentoring i doradztwo techniczne dla deweloperów Web3. Prowadzenie warsztatów z pisania bezpiecznych smart kontraktów w Solidity, architektury protokołów oraz wdrażania rozwiązań na sieciach EVM.",
         "Wennect": "Platforma rekrutacyjna nowej generacji oparta na blockchainie EVM. Projektowanie smart kontraktów w Solidity, mechanizmów depozytowych (escrow) oraz doradztwo strategiczne w architekturze rozwiązań Web3.",
@@ -416,6 +425,7 @@ const developerData = {
         "Adchitects": "Projekt zdecentralizowanego marketplace'u NFT na sieci Ethereum. Architektura smart kontraktów w Solidity, obsługa transakcji on-chain oraz optymalizacja zużycia gasu."
       },
       en: {
+        "MaluchTracker": "Mobile app for parents of babies, published on Google Play (PL/EN/UA): feeding, sleep, diapers, diet, WHO growth charts, developmental leaps and feeding predictions. Designed and built solo from scratch: Clean Architecture (ports and adapters) enforced by automated architecture checks, on-device data with no account and no ads, releases via EAS and GitHub Actions, and an AI-agent-driven workflow.",
         "Liqfinity": "Decentralized Finance (DeFi) protocol. Architecting non-custodial systems, liquidity pool integrations, on-chain risk mitigation, AWS cloud infrastructure automated via Terraform, and technical team leadership.",
         "Bored Founders Club": "Technical mentoring and advisory for Web3 developers. Running workshops on secure Solidity smart contracts, protocol architecture, and EVM deployment.",
         "Wennect": "Next-gen talent marketplace powered by EVM blockchain. Designing Solidity smart contracts, trustless escrow mechanisms, and strategic advisory on Web3 system architecture.",
@@ -428,6 +438,7 @@ const developerData = {
   },
   getProjectTechnologies(title) {
     const technologies = {
+      "MaluchTracker": ["React Native", "Expo", "TypeScript", "Clean Architecture", "EAS / GitHub Actions", "Google Play", "AI Agents"],
       "Liqfinity": ["DeFi", "Solidity", "AWS", "Terraform", "Cloud Infrastructure", "Risk Management"],
       "Bored Founders Club": ["Solidity", "Smart Contracts", "EVM", "Web3", "Security Audit", "Mentoring"],
       "Wennect": ["Solidity", "EVM", "Smart Contracts", "Escrow", "Web3 Advisory"],

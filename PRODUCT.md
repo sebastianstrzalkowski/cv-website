@@ -68,8 +68,8 @@ Undecided product facts:
 
 ## Evidence on Hand
 
-- Career history with per-role descriptions (EN/PL): GFT (DLT Expert, 2026–present), ASTEK (DLT Engineer), Inetum (four roles, 2018–2025) in `src/data/developerData.js`.
-- Side projects with URLs: Liqfinity, Bored Founders Club, MetaDriverseClub, Wennect, Mystra, Adchitects.
+- Career history with per-role descriptions (EN/PL): GFT (Senior DLT Engineer, 2026–present), ASTEK (DLT Engineer), Inetum (four roles, 2018–2025) in `src/data/developerData.js`.
+- Side projects with URLs: MaluchTracker, Liqfinity, Bored Founders Club, MetaDriverseClub, Wennect, Mystra, Adchitects.
 - Five conference appearances with images in `public/images/conferences/`: Wednesday Market Debates #4, JVMDays Poznań 2025, Fiesta BFC 2023, Blockchain Alliance Opener 2022, Web3 Devs Poland meetup Kraków.
 - YouTube talks with thumbnails and dates (Media section) plus `public/images/media/web3-architecture.png`.
 - Trainings list with certificate flags, including an "Architekt Jutra" certificate.
