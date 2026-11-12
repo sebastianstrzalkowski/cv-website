@@ -18,6 +18,12 @@ const DiscordIcon = (props) => (
   </svg>
 );
 
+export const XIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
 const renderValue = (value) => {
   const at = value.indexOf('@');
   if (at <= 0) return value;
@@ -116,6 +122,15 @@ const Contact = () => {
             >
               <Github size={16} aria-hidden="true" />
               <span>{contact.github}</span>
+            </a>
+            <a
+              href={`https://x.com/${contact.x.replace('@', '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 min-h-10 px-3 rounded-full border border-gray-800 hover:border-emerald-500/50 text-gray-200 hover:text-emerald-300 transition-colors"
+            >
+              <XIcon className="w-4 h-4" />
+              <span>X: {contact.x}</span>
             </a>
             <span className="inline-flex items-center gap-2 min-h-10 px-3 rounded-full border border-gray-800 text-gray-200">
               <DiscordIcon className="w-4 h-4" />

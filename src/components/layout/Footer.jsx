@@ -2,6 +2,7 @@ import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
+import { XIcon } from '../sections/Contact';
 
 const iconLink =
   'w-11 h-11 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-emerald-300 hover:border-emerald-500/50 transition-colors';
@@ -32,6 +33,9 @@ const Footer = () => {
           </a>
           <a href={`https://${developerData.contact.linkedin}`} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={iconLink}>
             <Linkedin size={18} aria-hidden="true" />
+          </a>
+          <a href={`https://x.com/${developerData.contact.x.replace('@', '')}`} target="_blank" rel="noopener noreferrer" aria-label="X" className={iconLink}>
+            <XIcon className="w-4 h-4" />
           </a>
         </div>
       </div>
