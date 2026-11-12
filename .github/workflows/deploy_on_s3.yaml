@@ -53,7 +53,7 @@ jobs:
             --cache-control "public, max-age=86400"
 
           # Entry points and agent-facing text must always be revalidated so a deploy is visible immediately.
-          for file in index.html pl/index.html; do
+          for file in index.html pl/index.html 404.html; do
             aws s3 cp "build/$file" "$BUCKET/$file" --cache-control "no-cache" --content-type "text/html; charset=utf-8"
           done
           for file in index.md pl/index.md; do
