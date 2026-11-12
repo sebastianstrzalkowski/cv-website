@@ -5,6 +5,7 @@ import developerData from '../../data/developerData';
 import SpotlightCard from '../ui/SpotlightCard';
 import RevealOnScroll from '../ui/RevealOnScroll';
 import SectionHeading from '../ui/SectionHeading';
+import Period from '../ui/Period';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -32,7 +33,7 @@ const Projects = () => {
                             <FolderGit2 size={20} aria-hidden="true" />
                           </div>
                           <span className="text-xs text-gray-400 bg-gray-800/60 px-2.5 py-1 rounded-full border border-gray-700/60 tabular-nums">
-                            {project.period}
+                            <Period item={project} />
                           </span>
                         </div>
 

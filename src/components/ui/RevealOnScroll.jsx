@@ -1,26 +1,33 @@
-import React, { useEffect, useRef } from 'react';
-import { m, useInView, useAnimation } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { m, useInView, useAnimation, useReducedMotion } from 'framer-motion';
 
+// Content is visible in the prerendered HTML (agents, crawlers, no-JS readers and screenshots).
+// After hydration, only blocks that start below the fold are hidden and then revealed once.
 const RevealOnScroll = ({
   children,
   width = "100%",
   delay = 0.15,
   duration = 0.6,
   direction = "up",
-  once = false,
   className = ""
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: "-60px 0px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px 0px" });
   const controls = useAnimation();
+  const reduceMotion = useReducedMotion();
+  const [armed, setArmed] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    } else if (!once) {
-      controls.start("hidden");
+    if (reduceMotion || !ref.current) return;
+    if (ref.current.getBoundingClientRect().top > window.innerHeight) {
+      controls.set("hidden");
+      setArmed(true);
     }
-  }, [isInView, controls, once]);
+  }, [controls, reduceMotion]);
+
+  useEffect(() => {
+    if (armed && isInView) controls.start("visible");
+  }, [armed, isInView, controls]);
 
   const getDirectionOffset = () => {
     switch (direction) {
@@ -39,9 +46,9 @@ const RevealOnScroll = ({
       <m.div
         variants={{
           hidden: { opacity: 0, x: offset.x, y: offset.y },
-          visible: { 
-            opacity: 1, 
-            x: 0, 
+          visible: {
+            opacity: 1,
+            x: 0,
             y: 0,
             transition: {
               duration,
@@ -50,7 +57,7 @@ const RevealOnScroll = ({
             }
           },
         }}
-        initial="hidden"
+        initial={false}
         animate={controls}
       >
         {children}

@@ -458,3 +458,5 @@ sketch
 
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm+all,intellij+all,intellij,webstorm,node,react
+# Build-time server bundle for prerendering (removed by scripts/prerender.mjs)
+build-ssr/

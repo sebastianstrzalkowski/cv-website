@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
 import SpotlightCard from '../ui/SpotlightCard';
 import RevealOnScroll from '../ui/RevealOnScroll';
+import { toIsoDate } from '../../data/developerData';
 import SectionHeading from '../ui/SectionHeading';
 
 const isLongDescription = (description) => Boolean(description) && description.length > 140;
@@ -80,7 +81,7 @@ const Trainings = () => {
                         <div className="space-y-1.5 mb-4 pt-3 border-t border-gray-800/80">
                           <div className="flex items-center text-xs text-gray-400 tabular-nums">
                             <Calendar size={13} className="mr-2 text-emerald-400" aria-hidden="true" />
-                            <span>{training.date}</span>
+                            <time dateTime={toIsoDate(training.date)}>{training.date}</time>
                           </div>
                           {training.duration && (
                             <div className="flex items-center text-xs text-gray-400">

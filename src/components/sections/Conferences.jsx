@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import developerData from '../../data/developerData';
 import SpotlightCard from '../ui/SpotlightCard';
 import RevealOnScroll from '../ui/RevealOnScroll';
+import { toIsoDate } from '../../data/developerData';
 import SectionHeading from '../ui/SectionHeading';
 
 const Conferences = () => {
@@ -68,7 +69,7 @@ const Conferences = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-gray-400 pt-3 border-t border-gray-800/80">
                         <div className="flex items-center">
                           <Calendar size={15} className="mr-2 text-emerald-400" aria-hidden="true" />
-                          <span className="tabular-nums">{conference.date}</span>
+                          <time className="tabular-nums" dateTime={toIsoDate(conference.date)}>{conference.date}</time>
                         </div>
                         <div className="flex items-center">
                           <MapPin size={15} className="mr-2 text-emerald-400" aria-hidden="true" />

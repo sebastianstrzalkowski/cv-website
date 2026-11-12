@@ -15,6 +15,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+        with:
+          # Full history: scripts/prerender.mjs dates sitemap lastmod and JSON-LD dateModified
+          # from the last commit that touched the content.
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -25,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Build React app
+      - name: Build and prerender (EN /, PL /pl/, Markdown, llms.txt, sitemap)
         run: npm run build
 
       - name: Configure AWS credentials
@@ -45,13 +49,20 @@ jobs:
 
           # Images, icons, PDF: a day in caches, revalidated afterwards.
           aws s3 cp build "$BUCKET" --recursive \
-            --exclude "assets/*" --exclude "index.html" --exclude "sitemap.xml" --exclude "robots.txt" \
+            --exclude "assets/*" --exclude "*.html" --exclude "*.md" --exclude "*.txt" --exclude "sitemap.xml" \
             --cache-control "public, max-age=86400"
 
-          # Entry points must always be revalidated so a deploy is visible immediately.
-          for file in index.html sitemap.xml robots.txt; do
-            aws s3 cp "build/$file" "$BUCKET/$file" --cache-control "no-cache"
+          # Entry points and agent-facing text must always be revalidated so a deploy is visible immediately.
+          for file in index.html pl/index.html; do
+            aws s3 cp "build/$file" "$BUCKET/$file" --cache-control "no-cache" --content-type "text/html; charset=utf-8"
           done
+          for file in index.md pl/index.md; do
+            aws s3 cp "build/$file" "$BUCKET/$file" --cache-control "no-cache" --content-type "text/markdown; charset=utf-8"
+          done
+          for file in build/*.txt; do
+            aws s3 cp "$file" "$BUCKET/$(basename "$file")" --cache-control "no-cache" --content-type "text/plain; charset=utf-8"
+          done
+          aws s3 cp build/sitemap.xml "$BUCKET/sitemap.xml" --cache-control "no-cache" --content-type "application/xml; charset=utf-8"
 
           # Remove files that no longer exist in the build (sizes match, so nothing is re-uploaded).
           aws s3 sync build "$BUCKET" --delete --size-only
@@ -76,3 +87,24 @@ jobs:
             --id $INVALIDATION_ID
           
           echo "Deployment completed successfully!"
+
+      - name: Notify search engines (IndexNow)
+        # Bing (and so Copilot) and other IndexNow engines recrawl the changed pages right away.
+        # The key is public by design: build/2e29dea148e25d11691014e64d9de937.txt proves domain ownership.
+        continue-on-error: true
+        run: |
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "sebastian.i-can-do.it",
+              "key": "2e29dea148e25d11691014e64d9de937",
+              "keyLocation": "https://sebastian.i-can-do.it/2e29dea148e25d11691014e64d9de937.txt",
+              "urlList": [
+                "https://sebastian.i-can-do.it/",
+                "https://sebastian.i-can-do.it/pl/",
+                "https://sebastian.i-can-do.it/CV_Sebastian_Strzalkowski.pdf",
+                "https://sebastian.i-can-do.it/index.md",
+                "https://sebastian.i-can-do.it/pl/index.md",
+                "https://sebastian.i-can-do.it/llms.txt"
+              ]
+            }' -w "IndexNow HTTP %{http_code}\n"

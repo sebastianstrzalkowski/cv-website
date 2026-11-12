@@ -1,48 +1,15 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const LanguageContext = createContext();
+const LanguageContext = createContext({ currentLanguage: 'en' });
 
-const SUPPORTED = ['en', 'pl'];
-
-const setMeta = (selector, content) => {
-  const el = document.head.querySelector(selector);
-  if (el && content) el.setAttribute('content', content);
-};
-
+// The language is fixed per URL (/ or /pl/) and the prerendered <head> already carries the
+// right lang, title, description, hreflang and JSON-LD, so nothing is patched at runtime.
 export const LanguageProvider = ({ children }) => {
   const { i18n } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'en');
-
-  useEffect(() => {
-    if (!SUPPORTED.includes(i18n.language)) {
-      i18n.changeLanguage('en');
-    }
-  }, [i18n]);
-
-  useEffect(() => {
-    const handleLanguageChange = (lng) => {
-      setCurrentLanguage(lng);
-      document.documentElement.lang = lng;
-
-      // Keep the document title and description in the visitor's language.
-      // Open Graph tags stay static (scrapers do not run JS).
-      const title = i18n.t('seo.title');
-      const description = i18n.t('seo.description');
-      if (title) document.title = title;
-      setMeta('meta[name="description"]', description);
-    };
-
-    handleLanguageChange(i18n.language);
-    i18n.on('languageChanged', handleLanguageChange);
-
-    return () => {
-      i18n.off('languageChanged', handleLanguageChange);
-    };
-  }, [i18n]);
 
   return (
-    <LanguageContext.Provider value={{ currentLanguage }}>
+    <LanguageContext.Provider value={{ currentLanguage: i18n.language }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -6,6 +6,7 @@ import developerData from '../../data/developerData';
 import SpotlightCard from '../ui/SpotlightCard';
 import RevealOnScroll from '../ui/RevealOnScroll';
 import SectionHeading from '../ui/SectionHeading';
+import Period from '../ui/Period';
 
 const Experience = () => {
   const { t } = useTranslation();
@@ -40,15 +41,19 @@ const Experience = () => {
                     <SpotlightCard className="p-6 sm:p-7" spotlightColor="rgba(16, 185, 129, 0.15)">
                       <div className="flex items-center gap-2 text-xs text-emerald-300 bg-emerald-500/10 px-3 py-1 rounded-full w-fit mb-3 border border-emerald-500/20 tabular-nums">
                         <Calendar size={13} aria-hidden="true" />
-                        <span>{exp.period}</span>
+                        <span><Period item={exp} /></span>
                       </div>
 
-                      <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
-                        {exp.position}
+                      {/* Company inside the heading: the outline reads "role · company", not four bare "Software Developer". */}
+                      <h3 className="mb-3">
+                        <span className="block text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
+                          {exp.position}
+                        </span>
+                        <span className="sr-only"> · </span>
+                        <span className="block text-sm font-semibold text-teal-300">
+                          {exp.company}
+                        </span>
                       </h3>
-                      <p className="text-sm font-semibold text-teal-300 mb-3">
-                        {exp.company}
-                      </p>
 
                       <p className="text-sm text-gray-300 leading-relaxed">
                         {developerData.getExperienceDescription(exp.company)}
