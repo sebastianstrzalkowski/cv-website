@@ -91,6 +91,7 @@ const developerData = {
     {
       title: "Liqfinity",
       url: "https://liqfinity.com",
+      role: "CTO",
       get period() {
         return formatPeriod("06.2024", "10.2025");
       }
@@ -133,7 +134,7 @@ const developerData = {
   ],
   experience: [
     {
-      position: "DLT Expert",
+      position: "Senior DLT Engineer",
       company: "GFT",
       get period() {
         return formatPeriod("08.2026", "obecnie");
@@ -196,7 +197,8 @@ const developerData = {
     linkedin: "linkedin.com/in/sebastianstrzalkowski",
     github: "github.com/sebastianstrzalkowski",
     telegram: "@strz4la",
-    discord: "strz4la"
+    discord: "strz4la",
+    x: "@strz4lkowic"
   },
   additionalTech: [
     "Antigravity",
