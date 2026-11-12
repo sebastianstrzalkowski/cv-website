@@ -65,16 +65,9 @@ const Hero = ({ scrollToSection }) => {
       <div className="container mx-auto px-4 z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
 
-          <m.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:w-7/12 text-center lg:text-left"
-          >
-            <m.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+          {/* The text column is visible in the prerendered HTML: no entrance fade on the name and summary. */}
+          <div className="lg:w-7/12 text-center lg:text-left">
+            <div
               className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs md:text-sm font-medium mb-6"
             >
               <span className="relative flex h-2 w-2" aria-hidden="true">
@@ -82,7 +75,7 @@ const Hero = ({ scrollToSection }) => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span>{t('hero.subtitle')}</span>
-            </m.div>
+            </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4">
               <span className="block text-gray-400 text-2xl sm:text-3xl font-medium mb-1">
@@ -91,8 +84,10 @@ const Hero = ({ scrollToSection }) => {
               <span className="text-balance">{developerData.name}</span>
             </h1>
 
-            <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start mb-6 overflow-hidden" aria-live="polite">
-              <AnimatePresence mode="wait">
+            {/* The rotating title is decorative; screen readers and agents get the full list once. */}
+            <p className="sr-only">{Array.isArray(titles) ? titles.join(' · ') : ''}</p>
+            <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start mb-6 overflow-hidden" aria-hidden="true">
+              <AnimatePresence mode="wait" initial={false}>
                 <m.div
                   key={currentTitle}
                   initial={{ y: 30, opacity: 0 }}
@@ -133,9 +128,15 @@ const Hero = ({ scrollToSection }) => {
                 <Code className="ml-2 text-emerald-400" size={18} aria-hidden="true" />
               </m.a>
 
-              <m.button
-                type="button"
-                onClick={openCvModal}
+              <m.a
+                href={developerData.cvUrl}
+                type="application/pdf"
+                onClick={(event) => {
+                  // Plain click opens the in-page preview; modified clicks, agents and no-JS readers get the PDF.
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+                  event.preventDefault();
+                  openCvModal();
+                }}
                 onMouseEnter={preloadCvModal}
                 onFocus={preloadCvModal}
                 whileHover={{ y: -2 }}
@@ -144,14 +145,12 @@ const Hero = ({ scrollToSection }) => {
               >
                 {t('hero.downloadCvButton')}
                 <FileText className="ml-2 text-teal-400" size={18} aria-hidden="true" />
-              </m.button>
+              </m.a>
             </div>
-          </m.div>
+          </div>
 
+          {/* The photo is the LCP element: visible in the prerendered HTML, no entrance fade. */}
           <m.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:w-5/12 flex justify-center relative select-none"
             style={{ perspective: 1000 }}
             onMouseMove={handleMouseMove}

@@ -54,10 +54,10 @@ This project is configured to be deployed to Amazon S3 using GitHub Actions.
 
 ## Available Scripts
 
-- `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
-- `npm run build` - Builds the app for production
-- `npm run eject` - Ejects the CRA configuration (one-way operation)
+- `npm start` - Runs the app in development mode (client-side render, `/pl/` works too)
+- `npm run build` - Builds the client, prerenders `/` (EN) and `/pl/` (PL) into static HTML and generates `index.md`, `pl/index.md`, `llms.txt`, `sitemap.xml` and `robots.txt`
+- `npm run preview` - Serves the prerendered build locally
+- `node generate_cv.cjs` - Regenerates the PDF/HTML CV from `CV_Sebastian_Strzalkowski.md` (needs pandoc and Chrome)
 
 ## Project Structure
 

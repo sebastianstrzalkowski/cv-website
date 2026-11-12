@@ -32,11 +32,12 @@ Secondary, confirmed supporting claims: active conference speaker and Web3 mento
 - Visitors typically come from LinkedIn, conference follow-ups, YouTube talks or recruiter searches, on desktop or phone.
 - The CV is consumed as an A4 print or PDF export from the in-page modal; recruiters forward it inside ATS systems and email.
 - Contact happens through outbound links (email, Telegram and LinkedIn cards; GitHub and Discord handle below; mailto, GitHub and LinkedIn in the footer). The phone number is deliberately not shown on the site; it appears only in the CV. EmailJS is installed and a form's copy exists in both locales, but no form is rendered today.
-- Deployment: static Vite build synced to S3 and served through CloudFront by GitHub Actions on push.
+- Deployment: static Vite build synced to S3 and served through CloudFront by a manually triggered GitHub Actions workflow (`deploy_on_s3.yaml`, workflow_dispatch).
 
 ## Capabilities and Constraints
 
-- Live at https://sebastian.i-can-do.it (CloudFront behind Cloudflare). The canonical URL, Open Graph tags and sitemap are generated from VITE_SITE_URL in vite.config.js.
+- Live at https://sebastian.i-can-do.it (CloudFront behind Cloudflare). English at `/`, Polish at `/pl/` (Cloudflare rewrites `/pl/` to `/pl/index.html` on the S3 origin).
+- Agent-readable by design: `npm run build` prerenders the whole CV into `build/index.html` and `build/pl/index.html` (`src/entry-server.jsx` + `scripts/prerender.mjs`, React hydrates on the client), and generates per-language `<head>` (hreflang, canonical, Open Graph, JSON-LD ProfilePage/Person), `index.md` / `pl/index.md`, `llms.txt`, `sitemap.xml` and `robots.txt` from `src/seo/siteDocuments.js`. Facts live in `src/data/developerData.js` and `src/locales/*`; never hand-edit generated SEO files.
 
 Confirmed functionality:
 

@@ -50,6 +50,19 @@ const formatPeriod = (startDate, endDate) => {
   }
 };
 
+// "08.2026" -> "2026-08" for <time datetime>; "obecnie" (present) -> undefined.
+export const toIsoMonth = (value) => {
+  if (!value || value === "obecnie") return undefined;
+  const [month, year] = value.split(".");
+  return `${year}-${month}`;
+};
+
+// "11.03.2026" -> "2026-03-11"
+export const toIsoDate = (value) => {
+  const [day, month, year] = value.split(".");
+  return `${year}-${month}-${day}`;
+};
+
 export const calculateYearsOfExperience = (startMonth = 7, startYear = 2018) => {
   const now = new Date();
   const currentYear = now.getFullYear();
@@ -92,51 +105,65 @@ const developerData = {
       title: "MaluchTracker",
       url: "https://maluchtracker.pl",
       role: "Founder & Developer",
+      start: "05.2026",
+      end: "obecnie",
       get period() {
-        return formatPeriod("05.2026", "obecnie");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       title: "Liqfinity",
       url: "https://liqfinity.com",
       role: "CTO",
+      start: "06.2024",
+      end: "10.2025",
       get period() {
-        return formatPeriod("06.2024", "10.2025");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       title: "Bored Founders Club",
       url: "https://boredfoundersclub.pl/",
       role: "Blockchain Mentor",
+      start: "01.2023",
+      end: "09.2023",
       get period() {
-        return formatPeriod("01.2023", "09.2023");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       title: "MetaDriverseClub",
+      start: "06.2022",
+      end: "08.2023",
       get period() {
-        return formatPeriod("06.2022", "08.2023");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       title: "Wennect",
       url: "https://www.wennect.com/",
       role: "Blockchain Advisor",
+      start: "12.2022",
+      end: "09.2023",
       get period() {
-        return formatPeriod("12.2022", "09.2023");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       title: "Mystra",
       url: "https://mystra.io/",
+      start: "02.2022",
+      end: "07.2022",
       get period() {
-        return formatPeriod("02.2022", "07.2022");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       title: "Adchitects",
+      start: "05.2021",
+      end: "02.2022",
       get period() {
-        return formatPeriod("05.2021", "02.2022");
+        return formatPeriod(this.start, this.end);
       }
     }
   ],
@@ -144,43 +171,55 @@ const developerData = {
     {
       position: "Senior DLT Engineer",
       company: "GFT",
+      start: "08.2026",
+      end: "obecnie",
       get period() {
-        return formatPeriod("08.2026", "obecnie");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       position: "DLT Engineer",
       company: "ASTEK",
+      start: "08.2025",
+      end: "08.2026",
       get period() {
-        return formatPeriod("08.2025", "08.2026");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       position: "Software Developer",
       company: "Inetum - Telco",
+      start: "09.2024",
+      end: "07.2025",
       get period() {
-        return formatPeriod("09.2024", "07.2025");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       position: "Software Developer",
       company: "Inetum - IoT",
+      start: "01.2024",
+      end: "07.2024",
       get period() {
-        return formatPeriod("01.2024", "07.2024");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       position: "Software Developer",
       company: "Inetum - Cloud",
+      start: "07.2022",
+      end: "01.2024",
       get period() {
-        return formatPeriod("07.2022", "01.2024");
+        return formatPeriod(this.start, this.end);
       }
     },
     {
       position: "Software Developer",
       company: "Inetum - Telco CRM",
+      start: "07.2018",
+      end: "07.2022",
       get period() {
-        return formatPeriod("07.2018", "07.2022");
+        return formatPeriod(this.start, this.end);
       }
     }
   ],

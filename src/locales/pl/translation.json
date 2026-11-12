@@ -133,7 +133,9 @@
     "softwareDeveloper": "Senior DLT Engineer & Blockchain Architect"
   },
   "seo": {
-    "title": "Sebastian Strzałkowski | Senior DLT Engineer",
-    "description": "Senior DLT Engineer i architekt blockchain. Bankowe systemy DLT wdrożone produkcyjnie: tokenizowane depozyty, Hyperledger, Solidity/EVM, Java/Spring."
+    "title": "Sebastian Strzałkowski | Senior DLT Engineer, inżynier blockchain",
+    "description": "Senior DLT Engineer i architekt blockchain. Bankowe systemy DLT wdrożone produkcyjnie: tokenizowane depozyty, Hyperledger, Solidity/EVM, Java/Spring.",
+    "bio": "Sebastian Strzałkowski jest Senior DLT Engineerem w GFT w Warszawie i inżynierem oprogramowania od 2018 roku. Buduje bankowe systemy blockchain klasy enterprise: tokenizowane depozyty, Hyperledger, smart kontrakty Solidity/EVM oraz systemy rozproszone w Javie i Springu.",
+    "cvPdf": "CV (PDF, po angielsku)"
   }
 }
