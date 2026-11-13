@@ -331,6 +331,10 @@ const developerData = {
           date: "11.03.2026",
           location: "Warszawa, Polska",
           image: "/images/conferences/cashify_debate.webp",
+          organizers: [
+            { name: "Cashify", url: "https://cashify.eu" },
+            { name: "Warsaw Enterprise Institute", url: "https://wei.org.pl" }
+          ],
           imageSize: [800, 450],
           tags: ["Ethereum", "DeFi", "Web3", "Debata", "Smart Contracts"]
         },
@@ -379,6 +383,10 @@ const developerData = {
           date: "11.03.2026",
           location: "Warsaw, Poland",
           image: "/images/conferences/cashify_debate.webp",
+          organizers: [
+            { name: "Cashify", url: "https://cashify.eu" },
+            { name: "Warsaw Enterprise Institute", url: "https://wei.org.pl" }
+          ],
           imageSize: [800, 450],
           tags: ["Ethereum", "DeFi", "Web3", "Debate", "Smart Contracts"]
         },

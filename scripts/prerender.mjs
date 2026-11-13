@@ -17,18 +17,20 @@ const { PAGES, SITE_URL, buildHead, buildMarkdown, buildLlmsTxt, renderApp } = a
 );
 
 // Date of the last content change, not of the build: a stable freshness signal for crawlers.
-const lastmod = (() => {
+// Full ISO 8601 timestamp with offset: Google rejects a bare date in JSON-LD dateModified.
+const modified = (() => {
   try {
-    const date = execSync(
-      'git log -1 --format=%cs -- src/data src/locales src/components CV_Sebastian_Strzalkowski.md',
+    const timestamp = execSync(
+      'git log -1 --format=%cI -- src/data src/locales src/components CV_Sebastian_Strzalkowski.md',
       { cwd: root, encoding: 'utf8' }
     ).trim();
-    if (date) return date;
+    if (timestamp) return timestamp;
   } catch {
-    // No git history (e.g. shallow checkout without the files): fall back to today.
+    // No git history (e.g. shallow checkout without the files): fall back to now.
   }
-  return new Date().toISOString().slice(0, 10);
+  return new Date().toISOString();
 })();
+const lastmod = modified.slice(0, 10);
 
 const template = readFileSync(join(buildDir, 'index.html'), 'utf8');
 for (const marker of ['<!--seo-head-->', '<!--app-html-->', '<html lang="en">']) {
@@ -46,7 +48,7 @@ console.log(`Prerendering (content last changed ${lastmod})`);
 
 for (const [lng, page] of Object.entries(PAGES)) {
   const appHtml = await renderApp(lng);
-  const head = await buildHead(lng, { lastmod });
+  const head = await buildHead(lng, { modified });
   const html = template
     .replace('<html lang="en">', `<html lang="${lng}">`)
     .replace('<!--seo-head-->', head)

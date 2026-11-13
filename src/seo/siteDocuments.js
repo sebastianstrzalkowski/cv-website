@@ -54,7 +54,15 @@ const withLanguage = async (lng, build) => {
 
 const currentJob = () => developerData.experience[0];
 
-const buildJsonLd = (lng, t, lastmod) => {
+// "Warsaw, Poland" -> PostalAddress; Google's Event report wants an address, not just a place name.
+const COUNTRY_CODES = { poland: 'PL', polska: 'PL' };
+const toPostalAddress = (location) => {
+  const [locality, country] = location.split(',').map((part) => part.trim());
+  const addressCountry = country && (COUNTRY_CODES[country.toLowerCase()] || country);
+  return { '@type': 'PostalAddress', addressLocality: locality, ...(addressCountry && { addressCountry }) };
+};
+
+const buildJsonLd = (lng, t, modified) => {
   const page = PAGES[lng];
   const pageUrl = `${SITE_URL}${page.path}`;
   const job = currentJob();
@@ -69,7 +77,7 @@ const buildJsonLd = (lng, t, lastmod) => {
         name: t('seo.title'),
         description: t('seo.description'),
         inLanguage: lng,
-        dateModified: lastmod,
+        dateModified: modified,
         isPartOf: { '@id': WEBSITE_ID },
         mainEntity: { '@id': PERSON_ID },
       },
@@ -116,8 +124,20 @@ const buildJsonLd = (lng, t, lastmod) => {
           '@type': 'Event',
           name: conference.name,
           startDate: toIsoDate(conference.date),
+          endDate: toIsoDate(conference.date),
+          eventStatus: 'https://schema.org/EventScheduled',
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
           description: conference.description,
-          location: { '@type': 'Place', name: conference.location },
+          image: `${SITE_URL}${conference.image}`,
+          location: {
+            '@type': 'Place',
+            name: conference.location,
+            address: toPostalAddress(conference.location),
+          },
+          performer: { '@type': 'Person', '@id': PERSON_ID, name: developerData.name },
+          ...(conference.organizers && {
+            organizer: conference.organizers.map(({ name, url }) => ({ '@type': 'Organization', name, url })),
+          }),
         })),
         hasCredential: developerData.trainings
           .filter((training) => training.certificate)
@@ -134,7 +154,7 @@ const buildJsonLd = (lng, t, lastmod) => {
 };
 
 // Everything that goes between <head> tags except charset, viewport, icons and assets.
-export const buildHead = (lng, { lastmod }) =>
+export const buildHead = (lng, { modified }) =>
   withLanguage(lng, (t) => {
     const page = PAGES[lng];
     const pageUrl = `${SITE_URL}${page.path}`;
@@ -171,7 +191,7 @@ export const buildHead = (lng, { lastmod }) =>
       `<meta name="twitter:title" content="${escapeAttr(title)}" />`,
       `<meta name="twitter:description" content="${escapeAttr(description)}" />`,
       `<meta name="twitter:image" content="${SITE_URL}/images/og-image.jpg" />`,
-      `<script type="application/ld+json">\n${safeJson(buildJsonLd(lng, t, lastmod))}\n</script>`,
+      `<script type="application/ld+json">\n${safeJson(buildJsonLd(lng, t, modified))}\n</script>`,
     ];
 
     return tags.map((tag) => `  ${tag}`).join('\n');
