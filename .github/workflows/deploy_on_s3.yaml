@@ -53,10 +53,11 @@ jobs:
             --cache-control "public, max-age=86400"
 
           # Entry points and agent-facing text must always be revalidated so a deploy is visible immediately.
-          for file in index.html pl/index.html 404.html; do
+          # Every page (/, /pl/, /privacy/, /pl/privacy/, 404) and its Markdown twin.
+          (cd build && find . -name '*.html' | sed 's|^\./||') | while read -r file; do
             aws s3 cp "build/$file" "$BUCKET/$file" --cache-control "no-cache" --content-type "text/html; charset=utf-8"
           done
-          for file in index.md pl/index.md; do
+          (cd build && find . -name '*.md' | sed 's|^\./||') | while read -r file; do
             aws s3 cp "build/$file" "$BUCKET/$file" --cache-control "no-cache" --content-type "text/markdown; charset=utf-8"
           done
           for file in build/*.txt; do
@@ -105,6 +106,8 @@ jobs:
                 "https://sebastian.i-can-do.it/CV_Sebastian_Strzalkowski.pdf",
                 "https://sebastian.i-can-do.it/index.md",
                 "https://sebastian.i-can-do.it/pl/index.md",
-                "https://sebastian.i-can-do.it/llms.txt"
+                "https://sebastian.i-can-do.it/llms.txt",
+                "https://sebastian.i-can-do.it/privacy/",
+                "https://sebastian.i-can-do.it/pl/privacy/"
               ]
             }' -w "IndexNow HTTP %{http_code}\n"

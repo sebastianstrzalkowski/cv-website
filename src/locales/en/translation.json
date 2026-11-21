@@ -124,7 +124,8 @@
     "certificate": "Certificate"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "privacy": "Privacy policy"
   },
   "developerData": {
     "about": "Senior DLT Engineer & Blockchain Architect with {{years}} years of engineering experience, specializing in secure on-chain protocol design, smart contract architecture (EVM / Solidity / Casper / Hyperledger), and enterprise-grade banking & decentralized finance (DeFi) solutions. Combining deep Web3 domain expertise (consensus mechanisms, L2 rollups, RWA tokenization, Tatum/Fireblocks custody rails) with distributed systems engineering and AI-accelerated development practices. Active conference speaker, mentor, and Ethereum ecosystem educator."

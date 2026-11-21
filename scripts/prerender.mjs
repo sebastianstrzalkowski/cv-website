@@ -1,7 +1,8 @@
 // Turns the client build into static, agent-readable pages:
 //   build/index.html (EN) and build/pl/index.html (PL) with the full CV rendered into #root,
 //   per-language <head> (hreflang, canonical, Open Graph, JSON-LD),
-//   build/index.md, build/pl/index.md, build/llms.txt, sitemap.xml and robots.txt.
+//   build/index.md, build/pl/index.md, build/llms.txt, sitemap.xml and robots.txt,
+//   and the standalone privacy pages build/privacy/ and build/pl/privacy/ (HTML + Markdown).
 // Runs after `vite build` and `vite build --ssr src/entry-server.jsx --outDir build-ssr`.
 import { execSync } from 'node:child_process';
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -12,7 +13,17 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const buildDir = join(root, 'build');
 const ssrDir = join(root, 'build-ssr');
 
-const { PAGES, SITE_URL, buildHead, buildMarkdown, buildLlmsTxt, renderApp } = await import(
+const {
+  PAGES,
+  PRIVACY_PAGES,
+  SITE_URL,
+  buildHead,
+  buildMarkdown,
+  buildLlmsTxt,
+  buildPrivacyHtml,
+  buildPrivacyMarkdown,
+  renderApp,
+} = await import(
   pathToFileURL(join(ssrDir, 'entry-server.js')).href
 );
 
@@ -58,6 +69,11 @@ for (const [lng, page] of Object.entries(PAGES)) {
   write(page.markdown.replace(/^\//, ''), await buildMarkdown(lng, { lastmod }));
 }
 
+for (const [lng, page] of Object.entries(PRIVACY_PAGES)) {
+  write(join(page.path, 'index.html').replace(/^\//, ''), buildPrivacyHtml(lng));
+  write(page.markdown.replace(/^\//, ''), buildPrivacyMarkdown(lng));
+}
+
 write('llms.txt', await buildLlmsTxt());
 
 const urls = Object.values(PAGES)
@@ -81,6 +97,14 @@ ${urls}
     <loc>${SITE_URL}/CV_Sebastian_Strzalkowski.pdf</loc>
     <lastmod>${lastmod}</lastmod>
   </url>
+${Object.values(PRIVACY_PAGES)
+  .map((page) => `  <url>
+    <loc>${SITE_URL}${page.path}</loc>
+${Object.entries(PRIVACY_PAGES)
+  .map(([code, p]) => `    <xhtml:link rel="alternate" hreflang="${code}" href="${SITE_URL}${p.path}" />`)
+  .join('\n')}
+  </url>`)
+  .join('\n')}
 </urlset>
 `);
 
