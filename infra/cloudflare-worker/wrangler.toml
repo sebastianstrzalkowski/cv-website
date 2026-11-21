@@ -1,0 +1,8 @@
+name = "cv-agent-gateway"
+main = "src/worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = false
+
+routes = [
+  { pattern = "sebastian.i-can-do.it/*", zone_name = "i-can-do.it" }
+]

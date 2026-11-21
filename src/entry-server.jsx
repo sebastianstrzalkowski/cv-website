@@ -4,7 +4,16 @@ import { renderToString } from 'react-dom/server';
 import i18n from './i18n';
 import App from './App';
 
-export { PAGES, SITE_URL, buildHead, buildMarkdown, buildLlmsTxt } from './seo/siteDocuments';
+export {
+  PAGES,
+  PRIVACY_PAGES,
+  SITE_URL,
+  buildHead,
+  buildMarkdown,
+  buildLlmsTxt,
+  buildPrivacyHtml,
+  buildPrivacyMarkdown,
+} from './seo/siteDocuments';
 
 export const renderApp = async (lng) => {
   await i18n.changeLanguage(lng);

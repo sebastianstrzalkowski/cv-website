@@ -8,7 +8,8 @@ const iconLink =
   'w-11 h-11 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-emerald-300 hover:border-emerald-500/50 transition-colors';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const privacyPath = i18n.language === 'pl' ? '/pl/privacy/' : '/privacy/';
 
   return (
     <footer className="relative bg-gray-950 text-white py-12 px-4 border-t border-gray-800/80">
@@ -20,7 +21,10 @@ const Footer = () => {
             <span className="text-emerald-400" aria-hidden="true">{'/>'}</span>
           </div>
           <p className="text-xs text-gray-400">
-            © {new Date().getFullYear()} {developerData.name}. {t('footer.rights')}
+            © {new Date().getFullYear()} {developerData.name}. {t('footer.rights')}{' '}
+            <a href={privacyPath} className="underline underline-offset-2 hover:text-emerald-300 transition-colors">
+              {t('footer.privacy')}
+            </a>
           </p>
         </div>
 

@@ -124,7 +124,8 @@
     "certificate": "Certyfikat"
   },
   "footer": {
-    "rights": "Wszelkie prawa zastrzeżone."
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "privacy": "Polityka prywatności"
   },
   "developerData": {
     "about": "Inżynier DLT i Architekt Rozwiązań Blockchain z {{years}}-letnim doświadczeniem, specjalizujący się w projektowaniu bezpiecznych protokołów on-chain, architekturze smart kontraktów (EVM / Solidity / Casper / Hyperledger) oraz rozwiązaniach dla sektora bankowego i zdecentralizowanych finansów (DeFi). Łączę zaawansowaną wiedzę domenową Web3 (mechanizmy konsensusu, skalowalność L2, tokenizacja RWA, integracje powiernicze Tatum/Fireblocks) z rygorem inżynierii systemów rozproszonych oraz efektywnym wykorzystaniem narzędzi AI (LLM-driven development) w procesie wytwarzania oprogramowania. Aktywny prelegent konferencyjny, mentor i edukator ekosystemu Ethereum."
